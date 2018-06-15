@@ -125,9 +125,8 @@ function chrtset(x,y){
 			n==18?a=`10`:
 			n==20&&(a=`${x.ammo}`);
 			$(`#table>div:nth-child(${n})`).html(a);
-			if ($("#table>div:nth-child(20)").text()=="undefined"){$("#table>div:nth-child(20)").text("")}
-			{
-			}
+			if ($("#table>div:nth-child(20)").text()=="undefined"){$("#table>div:nth-child(20)").text("")};
+			if (Array.isArray(x.drop)==true){$("#table>div:nth-child(4)>button:nth-child(3)").removeAttr("disabled").addClass("text-white")};
 		}
 	}
 	function Set1(z){y.labels=["체력","화력","회피","사속","명중"];y.datasets[0].data=[x.hp[z],x.dmg[z],x.dodge[z],x.FR[z],x.hit[z]]};
