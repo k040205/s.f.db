@@ -1,32 +1,17 @@
 <!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name="keywords" content="소녀전선,소전,girlsfrontline,디비,데이터베이스">
-<meta name="description" content="Wellcome to SANGVIS FERRI Database">
-<meta property="og:site_name" content="SANGVIS FERRI DATABASE">
-<meta property="og:type" content="website">
-<meta property="og:title" content="SANGVIS FERRI DATABASE">
-<meta property="og:description" content="Wellcome to SANGVIS FERRI Database Index Page">
-<meta property="og:image" content="http://sf2031.com/img/html/og_icon.png">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="500">
-<meta property="og:image:height" content="500">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://sf2031.com">
-<meta name="twitter:title" content="SANGVIS FERRI DATABASE">
-<meta name="twitter:description" content="Wellcome to SANGVIS FERRI Database Index Page">
-<meta name="twiiter:image" content="http://sf2031.com/img/html/og_icon.png">
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="keywords" content="소녀전선,소전,girlsfrontline,디비,데이터베이스"><meta name="description" content="Wellcome to SANGVIS FERRI Database">
+<meta property="og:site_name" content="SANGVIS FERRI DATABASE"><meta property="og:type" content="website"><meta property="og:title" content="SANGVIS FERRI DATABASE"><meta property="og:description" content="Wellcome to SANGVIS FERRI Database Index Page"><meta property="og:image" content="https://sf2031.com/img/html/og_icon.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="500"><meta property="og:image:height" content="500">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://sf2031.com"><meta name="twitter:title" content="SANGVIS FERRI DATABASE"><meta name="twitter:description" content="Wellcome to SANGVIS FERRI Database Index Page"><meta name="twiiter:image" content="https://sf2031.com/img/html/og_icon.png">
 <link rel="icon" sizes="128x128" type="image/png" href="favicon.png">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/bootstrap@4/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pure-css-loader@3.1.2/dist/loader-border.css">
 <link rel="stylesheet" href="css/css_overwrite.css">
 <link rel="stylesheet" href="css/index.css">
 <title>SANGVIS FERRI DATABASE</title>
 </head>
 <body class="bg-dark">
 <div id="Sidebar" class="d-flex flex-column btn-dark bg-dark text-white invisible"><!-- 데스크탑 -->
-<button id="close" class="btn btn-dark rounded-0 w3-display-container w3-border-bottom w3-border-right"><p class="w3-display-middle">×</p></button>
-<div class="logo w3-section text-center"><img src="img/logo/sidebar_gflogo.png" id="slogo"></div>
+<button id="close" type="button" class="btn text-white close x">×</button>
+<div class="logo my-3 text-center"><img src="img/logo/sidebar_gflogo.png" id="slogo"></div>
 <button class="btn btn-dark">도감</button>
 <button class="btn btn-dark">시뮬레이터</button>
 <button class="btn btn-dark bg-danger" href="#">정보</button>
@@ -43,7 +28,7 @@
 <button class="m6 btn btn-dark btn-sm tab" style="display:none">강화 시뮬레이터</button>
 </div>
 <div id="lm" class="d-flex flex-column bg-dark text-white text-center invisible" style="z-index:16"><!-- 모바일 -->
-<button id="lc" class="btn btn-dark rounded-0 w3-display-container w3-border-bottom w3-border-right"><p class="w3-display-middle">×</p></button>
+<button id="lc" type="button" class="btn close text-white border-bottom rounded-0 x">×</button>
 <button class="btn btn-dark">도감</button>
 <button class="btn btn-dark">시뮬레이터</button>
 <button class="btn btn-dark bg-danger" href="#">정보</button>
@@ -51,7 +36,7 @@
 <a class="btn btn-dark" href="https://discordapp.com/invite/7ZKwBrA" target="_parent">Contact</a>
 </div>
 <div id="rm" class="d-flex flex-column bg-dark text-white text-center invisible" style="z-index:16">
-<button id="rc" class="btn btn-dark rounded-0 w3-display-container w3-border-bottom w3-border-left"><p class="w3-display-middle">×</p></button>
+<button id="rc" type="button" class="btn close text-white border-bottom rounded-0 x">×</button>
 <button class="m1 btn btn-dark tab">인형 도감</button>
 <button class="m2 btn btn-dark tab">장비 도감</button>
 <button class="m3 btn btn-dark tab">요정 도감</button>
@@ -59,9 +44,8 @@
 <button class="m5 btn btn-dark tab" style="display:none">전지 계산기</button>
 <button class="m6 btn btn-dark tab" style="display:none">강화 시뮬레이터</button>
 </div>
-<div class="text-center bg-dark text-white d-md-none w3-display-container">
+<div class="text-center bg-dark text-white d-md-none clearfix">
 <button id="lo" class="btn btn-dark btn-sm float-left">LeftMenu</button>
-<div class="w3-display-middle">SFDB</div>
 <button id="ro" class="btn btn-dark btn-sm float-right">RightMenu</button>
 </div>
 <div id="contents">
@@ -69,21 +53,16 @@
 <div class="ctr" style="max-width:1200px">
 <div class="ctr" style="width:50%"><object type="image/svg+xml" data="img/logo/SFDB_main.svg"></object></div>
 <div class="progress"><div class="bg-dark progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width:88%">SANGVIS FERRI DATABASE Loading... 88%</div></div>
-<div>
-<div class="w3-half w3-padding">
-<i class="nt"><div class="w3-text-white ntl">공지사항</div></i>
-<div class="w3-border w3-round-large w3-section w3-container">
+<div class="row my-3">
+<div class="col-lg-6">
+<i class="nt"><div class="text-white ntl">공지사항</div></i>
+<div class="border rounded my-3 p-3">
 <a href="https://docs.google.com/spreadsheets/d/1qqFAPGNzIiIjLl9iwGV1-X__RL3pXVquTJlX-qkfaoc/htmlview#" style="color:red" target="_blank">New:DPS 계산 시트 대공개!</a><br/><br/>DB개발참여/오류제보/기타건의<br/><a href="https://github.com/ergo9ine/s.f.db">Github</a>에서 fork 후 Pull Request 해주시거나 <br/><b>Discord</b></a> 방문 후 SFDB 그룹 관리자 호출 부탁드립니다.<br/><br/>IE 이용 불가. 다른 브라우저나 모바일로 철혈백과를 이용해주세요.<br/><strong>Desktop resolution 1920x1080 basework</strong>
 </div>
 </div>
-<div class="w3-half w3-row w3-padding">
-<div class="w3-col" style="width:205px"><i class="nt"><div class="w3-text-white ntl">이벤트</div></i></div>
-<div class="w3-rest">
-<a href="tools/calendar.html" style="display:flex">
-<div class="w3-border w3-round-large w3-hide-small caltext" style="margin-top:32px;margin-right:10px;margin-left:10px;color:orange">[캘린더-일시중지-]</div>
-</a>
-</div>
-<div class="w3-col w3-section">
+<div class="col-lg-6">
+<div class="col-7 p-0" style="width:205px"><i class="nt"><div class="text-white ntl">이벤트</div></i></div>
+<div class="col my-3 p-0">
 <div id="carousel" class="carousel slide" data-ride="carousel" style="margin:3px 0">
 <ol class="carousel-indicators">
 <li data-target="#carousel" data-slide-to="0" class="active"></li>
@@ -139,14 +118,14 @@
 </div>
 </div>
 </div>
-<div id="tab5" class="content bg-dark text-white d-none">
-<nav class="navbar navbar-dark bg-warning text-dark">
+<div id="tab5" class="content bg-dark text-white row d-none">
+<nav class="col-12 h-10 navbar navbar-dark bg-warning text-dark">
 <div class="container">
 <a class="navbar-brand">숙소 전지 계산기</a>
 <p>사용 시 주의사항</p><p>* 숙소 미 개방 시, 숙소 안락도를 꼭 지워 주세요!</p><p>** 오차가 존재할 수 있습니다.</p>
 </div>
 </nav>
-<div class="w3-twothird">
+<div class="col-8">
 <table class="table table-dark table-sm">
 <tr><td>숙소명</td><td>숙소 안락도</td><td>세트 효과</td><td>애완동물</td><td>안락도 합계</td></tr>
 <tr>
@@ -221,8 +200,8 @@
 </tr>
 </table>
 </div>
-<div class="my-3 w3-third bg-dark">
-<div class="my-3 w3-half">
+<div class="col-4 my-3 bg-dark row">
+<div class="col-6 p-0">
 <div>
 <tr><th>총 안락도</th></tr>
 <tr><p id="tTcom"></p></tr>
@@ -240,7 +219,7 @@
 <tr><p id="abtr"></p></tr>
 </div>
 </div>
-<div class="my-3 w3-half">
+<div class="col-6 p-0">
 <table class="table table-dark table-sm">
 <tr><td colspan="2">숙소 개방당 얻는 전지 수:</td></tr>
 <tr><td>2</td><th>50</th></tr>
@@ -257,20 +236,18 @@
 </div>
 </div>
 </div>
-<div id="tab6" class="content bg-dark text-white d-none">
-<div>
-<div class="w3-half text-center font">
+<div id="tab6" class="content bg-dark text-white d-none row">
+<div class="col-6 text-center font">
 <nav class="navbar navbar-dark bg-warning text-dark"><div class="container"><a class="navbar-brand">강화 시뮬레이터</a><p>계산을 원하는 스탯의 수치를 입력하세요.</p></div></nav>
-<form id="stat" class="w3-padding-64">
-<p class="w3-tooltip"><span class="w3-text w3-tag bg-danger tp">화력</span><input id="atk" min="0" placeholder="0" value="0" required class="form-control text-center in ctr"></p>
-<p class="w3-tooltip"><span class="w3-text w3-tag bg-danger tp">회피</span><input id="dod" min="0" placeholder="0" value="0" required class="form-control text-center in ctr"></p>
-<p class="w3-tooltip"><span class="w3-text w3-tag bg-danger tp">명중</span><input id="hit" min="0" placeholder="0" value="0" required class="form-control text-center in ctr"></p>
-<p class="w3-tooltip"><span class="w3-text w3-tag bg-danger tp">사속</span><input id="spd" min="0" placeholder="0" value="0" required class="form-control text-center in ctr"></p>
-<button type="submit" id="clickme" class="w3-btn w3-wide bg-info">계산</button>
+<form id="stat" class="py-5 px-3">
+<input data-toggle="tooltip" data-placement="top" data-original-title="화력" id="atk" min="0" placeholder="0" value="0" required class="my-2 rounded-0 form-control text-center in ctr">
+<input data-toggle="tooltip" data-placement="top" data-original-title="회피" id="dod" min="0" placeholder="0" value="0" required class="my-2 rounded-0 form-control text-center in ctr">
+<input data-toggle="tooltip" data-placement="top" data-original-title="명중" id="hit" min="0" placeholder="0" value="0" required class="my-2 rounded-0 form-control text-center in ctr">
+<input data-toggle="tooltip" data-placement="top" data-original-title="사속" id="spd" min="0" placeholder="0" value="0" required class="my-2 rounded-0 form-control text-center in ctr">
+<button type="submit" id="clickme" class="btn rounded-0 btn-block bg-info">계산</button>
 </form>
 </div>
-</div>
-<div class="w3-half bg-dark text-white"><table id="result" class="w3-border w3-table"></table></div>
+<div class="col-6 bg-dark text-white"><table id="result" class="border table"></table></div>
 </div>
 <div id="tab7" class="content d-none"><h1>제조 시뮬레이터</h1><p>Test Page</p></div>
 </div>

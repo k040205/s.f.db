@@ -109,7 +109,7 @@ function chrtset(x,y){
 		var a,b;
 		for (var n=2;n<22;n=n+2){
 			n==2?a=`${x.hp[0]} ~ ${x.hp[k]}`:
-			n==4?a=`<button class="btn btn-sm bg-warning" disabled>Normal</button><button class="btn btn-sm bg-danger" disabled>Heavy</button><button class="btn btn-sm bg-info" disabled>Drop</button>`:
+			n==4?a=`<button class="btn btn-xs bg-warning" disabled>Normal</button><button class="btn btn-xs bg-danger" disabled>Heavy</button><button class="btn btn-xs bg-info" disabled>Drop</button>`:
 			n==6?a=`${x.dmg[0]} ~ ${x.dmg[k]}`:
 			n==8?a=`${x.dodge[0]} ~ ${x.dodge[k]}`:
 			n==10?a=`${x.hit[0]} ~ ${x.hit[k]}`:
