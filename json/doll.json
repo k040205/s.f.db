@@ -975,7 +975,7 @@
 "hit":[9,62],
 "FR":[26,37],
 "skill":{
-"src":0,
+"src":1,
 "target":"enemy_current",
 "FCD":10,
 "CD":[20,16],
@@ -1050,7 +1050,7 @@
 "Fx":{
 "target":"hg",
 "self":5,
-"tile":[9],
+"tile":[3],
 "TileFx":{
 "time":15
 }}},{
@@ -1140,7 +1140,7 @@
 "Fx":{
 "target":"hg",
 "self":5,
-"tile":[2],
+"tile":[8],
 "TileFx":{
 "time":15
 }}},{
@@ -1290,7 +1290,7 @@
 "Fx":{
 "target":"hg",
 "self":5,
-"tile":[3],
+"tile":[9],
 "TileFx":{
 "time":12
 }}},{
@@ -6929,7 +6929,7 @@
 "Fx":{
 "target":"hg",
 "self":5,
-"tile":[2],
+"tile":[8],
 "TileFx":{
 "time":18
 }},
