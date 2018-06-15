@@ -109,7 +109,7 @@ function chrtset(x,y){
 		var a,b;
 		for (var n=2;n<22;n=n+2){
 			n==2?a=`${x.hp[0]} ~ ${x.hp[k]}`:
-			n==4?a=`<button class="btn btn-xs bg-warning" disabled>Normal</button><button class="btn btn-xs bg-danger" disabled>Heavy</button><button class="btn btn-xs bg-info" disabled>Drop</button>`:
+			n==4?a=`<div class="btn-group" role="group" aria-label="Acquisition"><button class="btn btn-sm bg-warning" disabled>Normal</button><button class="btn btn-sm bg-danger" disabled>Heavy</button><button class="btn btn-sm bg-info" disabled>Drop</button></div>`:
 			n==6?a=`${x.dmg[0]} ~ ${x.dmg[k]}`:
 			n==8?a=`${x.dodge[0]} ~ ${x.dodge[k]}`:
 			n==10?a=`${x.hit[0]} ~ ${x.hit[k]}`:
@@ -126,7 +126,7 @@ function chrtset(x,y){
 			n==20&&(a=`${x.ammo}`);
 			$(`#table>div:nth-child(${n})`).html(a);
 			if ($("#table>div:nth-child(20)").text()=="undefined"){$("#table>div:nth-child(20)").text("")};
-			if (Array.isArray(x.drop)==true){$("#table>div:nth-child(4)>button:nth-child(3)").removeAttr("disabled").addClass("text-white")};
+			if (Array.isArray(x.drop)==true){$("#table>div:nth-child(4)>.btn-group>button:nth-child(3)").removeAttr("disabled").addClass("text-white")};
 		}
 	}
 	function Set1(z){y.labels=["체력","화력","회피","사속","명중"];y.datasets[0].data=[x.hp[z],x.dmg[z],x.dodge[z],x.FR[z],x.hit[z]]};
