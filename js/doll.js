@@ -1,4 +1,4 @@
-"use strict";var grid,rCh,ghver=1.80608,dollData=[],w3img='<img class="w3-image" width="256" height="256">',idir='../img/t_doll/',loader=$(".loader"),dollSkill=["AimAttackCurrentTarge","AimAttackDistanceTarge","AimAttackSpecificTarge","airattack","airborne","AK12Buff","AN94Shot","AR15Shot","armor","armorBuff","armorBuffSelf","armorDebuff","armorDebuffSelf","BBNoel","bombard","Bronya","buff","Carcano1891","Carcano1938","CBJMS","Chloe","CLEAR","Coldweapon","comboBuffSelf","command","crit","critBuff","critBuffSelf","debuff","defense","dodgeBuff","dodgeBuffSelf","dodgeDebuff","empty","FAIL","fighting","Flare","Flashbomb","fortress","GGElfeldt","golden","Grenade","Himeko","hitBuff","hitBuffSelf","hitDebuff","illumine","Invincible","Invincible35","IWantU","Kaguya","Kiana","LadyMadeSTAR","Landmines","M4Nightmare","M1918","MosinNagant","Napalm","nightcritBuff","nightcritBuff38","nightcritBuffSelf","nightdodgeBuff","nightdodgeBuffSelf","nightdodgeDebuff","nighthitBuff","nighthitBuffSelf","nighthitDebuff","nightpowBuff","nightpowBuffSelf","nightpowDebuff","nightrateBuff","nightrateBuffSelf","nightrateDebuff","nightspeedDebuff","nighttargetdodgeDebuff","nighttargethitDebuff","nighttargetpowDebuff","nighttargetrateDebuff","nighttargetspeedDebuff","Noconsumption","position","powBuff","powBuffSelf","powBuffShield","powDebuff","RaidenMei","rateBuff","rateBuffSelf","rateDebuff","reinforce","rescue","RifleGrenade","roadblocks","Sakura","Seele","shield","Shotgun","Smoke","sniper","speedDebuff","target","targetdodgeDebuff","targethitDebuff","targetpowDebuff","targetrateDebuff","targetspeedDebuff","Theresa","VariableBuff","augbuff","OblivioN"];
+"use strict";var grid,rCh,ghver=1.80615,dollData=[],w3img='<img class="w3-image" width="256" height="256">',idir='../img/t_doll/',loader=$(".loader"),dollSkill=["AimAttackCurrentTarge","AimAttackDistanceTarge","AimAttackSpecificTarge","airattack","airborne","AK12Buff","AN94Shot","AR15Shot","armor","armorBuff","armorBuffSelf","armorDebuff","armorDebuffSelf","BBNoel","bombard","Bronya","buff","Carcano1891","Carcano1938","CBJMS","Chloe","CLEAR","Coldweapon","comboBuffSelf","command","crit","critBuff","critBuffSelf","debuff","defense","dodgeBuff","dodgeBuffSelf","dodgeDebuff","empty","FAIL","fighting","Flare","Flashbomb","fortress","GGElfeldt","golden","Grenade","Himeko","hitBuff","hitBuffSelf","hitDebuff","illumine","Invincible","Invincible35","IWantU","Kaguya","Kiana","LadyMadeSTAR","Landmines","M4Nightmare","M1918","MosinNagant","Napalm","nightcritBuff","nightcritBuff38","nightcritBuffSelf","nightdodgeBuff","nightdodgeBuffSelf","nightdodgeDebuff","nighthitBuff","nighthitBuffSelf","nighthitDebuff","nightpowBuff","nightpowBuffSelf","nightpowDebuff","nightrateBuff","nightrateBuffSelf","nightrateDebuff","nightspeedDebuff","nighttargetdodgeDebuff","nighttargethitDebuff","nighttargetpowDebuff","nighttargetrateDebuff","nighttargetspeedDebuff","Noconsumption","position","powBuff","powBuffSelf","powBuffShield","powDebuff","RaidenMei","rateBuff","rateBuffSelf","rateDebuff","reinforce","rescue","RifleGrenade","roadblocks","Sakura","Seele","shield","Shotgun","Smoke","sniper","speedDebuff","target","targetdodgeDebuff","targethitDebuff","targetpowDebuff","targetrateDebuff","targetspeedDebuff","Theresa","VariableBuff","augbuff","OblivioN"];
 $(document).ready(()=>{
 	contentsload();
 	$('[data-toggle="popover"]').popover();
@@ -172,6 +172,7 @@ function Skill(y,x){
 	src==0||src==1?
 		y==148?Sdesc=`지속시간 동안 자신의 공격속도를 ${FR[1]}% 감소시키고, 화력을 ${dmg[1]}% 상승시킨다.`:
 		y==183?Sdesc=`1초간 조준 후 특수한 탄환을 발사하여 공격력의 ${dmg1[1]/10}배의 피해를 입히고 3초간 받는 피해량을 ${dmg2[1]}% 증가시키며 아군의 화력을 집중시킨다. 보스급의 적을 우선 조준하며 컨텐더의 위치에 따라 전열 : 가장 멀리있는 / 중간 : 가장 체력이 많은 / 후열 : 가장 가까운 적을 조준한다.`:
+		y==222?Sdesc=`패시브: 스킬 쿨타임 종료 후 TAC의 드론이 무작위의 적을 조준합니다.(1초마다 대상 변경) 액티브: 조준된 적에게 치명타가 적용되는 저격을 하여 ${dmg[1]}배의 피해를 입힙니다.`:
 		x.target=="enemy_current"?(sniper("1.5","현재 공격하던 타깃"),
 			y==145?(pt("2")):
 			y==46&&(rep("1.5초간 조준 후","1초씩 두번 조준 사격하여"))):
@@ -286,7 +287,7 @@ function togglecon(){
 	$("body>div:nth-child(2)").toggleClass("d-md-flex");
 	$("body>div:nth-child(3)").toggleClass("d-flex");
 	$("button.btn-warning,.w3-image").remove();
-	$(".w3-display-right:nth-child(4)").data("content","");
+	$("div.w3-display-container:nth-child(9)>div:nth-child(4)").removeAttr("data-content");
 	$('[data-toggle="popover"]').popover('hide');
 	$(".skinntg>button,#contents>div:nth-child(6)>button").off("click");	
 	$("div.w3-row:nth-child(3)>div:nth-child(2)>div:nth-child(2)").empty();
