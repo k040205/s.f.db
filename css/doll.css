@@ -29,17 +29,11 @@
 	#grid {
 		max-width:600px;
 	}
-	div.w3-twothird:nth-child(2){
-	margin:auto
-	}
 }
 @media all and (min-width:801px){
 	#grid {
 		max-width:800px;
 	}
-}
-@media all and (min-width:996px){
-	#chartcon{margin:0!important}
 }
 @media all and (min-width:1001px){
 	#grid {
