@@ -7,12 +7,12 @@ $(document).ready(()=>{
 //FIXME Line 20: 스킬 검색용(타이핑)으로 일시 지정, 추후 스킬 이름으로 변환 바람
 function contentsload(){
 	$.ajax('../json/doll.json',{contentType:'application/json',dataType:'json',success:result=>{
-		var itemcon='<div class="w3-hover-shadow tdoll item-content">',
+		var itemcon='<div class="tdoll item-content">',
 		allCharacters=$.map(result,(doll,index)=>{var timehour=parseInt(doll.buildTime/3600),timemin=doll.buildTime%3600/60,noval=doll.id;
 			noval>20000?noval="M"+(noval-20000):noval>1000&&(noval="X"+(noval-1000));
 			var character=$(`<div class="item" data-time="${timehour}${timemin}" data-type="${doll.type}" data-rarity="${doll.rarity}" data-skill="${doll.skill.src}"></div>`).detach(),
-				dollcon=`<div class="w3-text-white no" data-no="${doll.id}">${noval}</div>
-					<p class="w3-text-black name podo">${doll.krName}</p>
+				dollcon=`<div class="text-white no" data-no="${doll.id}">${noval}</div>
+					<p class="name podo">${doll.krName}</p>
 					<i class="star r${doll.rarity}"></i>
 					<i	class="incage doll info_cage_${doll.rarity}"></i>
 					<i class="type doll ${doll.type}_${doll.rarity}"></i>
@@ -53,7 +53,7 @@ function loadComplete(){
 		$("div.justify-content-center:nth-child(4)").toggleClass("d-none"),$("div.justify-content-center:nth-child(3)").addClass("d-none")
 	});
 	$(".item-content").click(function(){
-		$(".grid,#search,#filsor,#func").toggleClass('w3-hide'),$("body>div:nth-child(2)").toggleClass("d-md-flex"),$("body>div:nth-child(3)").toggleClass("d-flex");
+		$(".grid,#search,#func").toggleClass('d-none'),$("body>div:nth-child(2)").toggleClass("d-md-flex"),$("body>div:nth-child(3)").toggleClass("d-flex");
 		var clicked=$(this).children(".no").attr("data-no");
 		$.each(dollData,(index,doll)=>{
 			if(doll.id==clicked){
@@ -285,7 +285,7 @@ function Skill(y,x){
 	$("div.w3-row:nth-child(3)>div:nth-child(2)>div:nth-child(2)").html(Sdesc);
 };
 function togglecon(){
-	$(".grid,#search,#filsor,#func").toggleClass('w3-hide');
+	$(".grid,#search,#func").toggleClass('d-none');
 	$("body>div:nth-child(2)").toggleClass("d-md-flex");
 	$("body>div:nth-child(3)").toggleClass("d-flex");
 	$("button.btn-warning,.w3-image").remove();
