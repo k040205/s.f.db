@@ -1,7 +1,6 @@
 "use strict";var grid,rCh,ghver=1.80615,dollData=[],idir='../img/t_doll/',loader=$(".loader"),dollSkill=["AimAttackCurrentTarge","AimAttackDistanceTarge","AimAttackSpecificTarge","airattack","airborne","AK12Buff","AN94Shot","AR15Shot","armor","armorBuff","armorBuffSelf","armorDebuff","armorDebuffSelf","BBNoel","bombard","Bronya","buff","Carcano1891","Carcano1938","CBJMS","Chloe","CLEAR","Coldweapon","comboBuffSelf","command","crit","critBuff","critBuffSelf","debuff","defense","dodgeBuff","dodgeBuffSelf","dodgeDebuff","empty","FAIL","fighting","Flare","Flashbomb","fortress","GGElfeldt","golden","Grenade","Himeko","hitBuff","hitBuffSelf","hitDebuff","illumine","Invincible","Invincible35","IWantU","Kaguya","Kiana","LadyMadeSTAR","Landmines","M4Nightmare","M1918","MosinNagant","Napalm","nightcritBuff","nightcritBuff38","nightcritBuffSelf","nightdodgeBuff","nightdodgeBuffSelf","nightdodgeDebuff","nighthitBuff","nighthitBuffSelf","nighthitDebuff","nightpowBuff","nightpowBuffSelf","nightpowDebuff","nightrateBuff","nightrateBuffSelf","nightrateDebuff","nightspeedDebuff","nighttargetdodgeDebuff","nighttargethitDebuff","nighttargetpowDebuff","nighttargetrateDebuff","nighttargetspeedDebuff","Noconsumption","position","powBuff","powBuffSelf","powBuffShield","powDebuff","RaidenMei","rateBuff","rateBuffSelf","rateDebuff","reinforce","rescue","RifleGrenade","roadblocks","Sakura","Seele","shield","Shotgun","Smoke","sniper","speedDebuff","target","targetdodgeDebuff","targethitDebuff","targetpowDebuff","targetrateDebuff","targetspeedDebuff","Theresa","VariableBuff","augbuff","OblivioN"];
 $(document).ready(()=>{
-	contentsload();
-	$('[data-toggle="popover"]').popover();
+	contentsload(),$('[data-toggle="popover"]').popover();
 });
 //FIXME Line 12: 스킬 검색용(필터)으로 일시 지정, 추후 스킬 이름으로 변환 바람
 //FIXME Line 20: 스킬 검색용(타이핑)으로 일시 지정, 추후 스킬 이름으로 변환 바람
@@ -16,8 +15,8 @@ function contentsload(){
 			$(character).append(`<div class="tdoll item-content">`).find(".item-content").html(dollcon);
 			return character;
 		});
-			$('#grid').append(allCharacters),loadComplete();
-		  dollData=result;
+		$('#grid').append(allCharacters),loadComplete();
+		 dollData=result;
 		}});
 };
 function loadComplete(){
@@ -80,8 +79,7 @@ function loadComplete(){
 		$("#contents>div:nth-child(6)").toggleClass("d-none d-block")
 	});
 	$(".xfunc").click(()=>{
-		rCh.destroy();
-		togglecon();
+		rCh.destroy(),togglecon();
 	});
 };
 function sort(a){grid.sort(a)};
@@ -278,7 +276,7 @@ function togglecon(){
 	$(".grid,#search,#func").toggleClass('d-none');
 	$("body>div:nth-child(2)").toggleClass("d-md-flex");
 	$("body>div:nth-child(3)").toggleClass("d-flex");
-	$("button.btn-warning,.w3-image").remove();
+	$("button.btn-warning,.img-fluid").remove();
 	$("div.w3-display-container:nth-child(9)>div:nth-child(4)").removeAttr("data-content");
 	$('[data-toggle="popover"]').popover('hide');
 	$(".skinntg>button,#contents>div:nth-child(6)>button").off("click");	
