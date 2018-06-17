@@ -1,4 +1,4 @@
-"use strict";var grid,rCh,ghver=1.80615,dollData=[],w3img='<img class="w3-image" width="256" height="256">',idir='../img/t_doll/',loader=$(".loader"),dollSkill=["AimAttackCurrentTarge","AimAttackDistanceTarge","AimAttackSpecificTarge","airattack","airborne","AK12Buff","AN94Shot","AR15Shot","armor","armorBuff","armorBuffSelf","armorDebuff","armorDebuffSelf","BBNoel","bombard","Bronya","buff","Carcano1891","Carcano1938","CBJMS","Chloe","CLEAR","Coldweapon","comboBuffSelf","command","crit","critBuff","critBuffSelf","debuff","defense","dodgeBuff","dodgeBuffSelf","dodgeDebuff","empty","FAIL","fighting","Flare","Flashbomb","fortress","GGElfeldt","golden","Grenade","Himeko","hitBuff","hitBuffSelf","hitDebuff","illumine","Invincible","Invincible35","IWantU","Kaguya","Kiana","LadyMadeSTAR","Landmines","M4Nightmare","M1918","MosinNagant","Napalm","nightcritBuff","nightcritBuff38","nightcritBuffSelf","nightdodgeBuff","nightdodgeBuffSelf","nightdodgeDebuff","nighthitBuff","nighthitBuffSelf","nighthitDebuff","nightpowBuff","nightpowBuffSelf","nightpowDebuff","nightrateBuff","nightrateBuffSelf","nightrateDebuff","nightspeedDebuff","nighttargetdodgeDebuff","nighttargethitDebuff","nighttargetpowDebuff","nighttargetrateDebuff","nighttargetspeedDebuff","Noconsumption","position","powBuff","powBuffSelf","powBuffShield","powDebuff","RaidenMei","rateBuff","rateBuffSelf","rateDebuff","reinforce","rescue","RifleGrenade","roadblocks","Sakura","Seele","shield","Shotgun","Smoke","sniper","speedDebuff","target","targetdodgeDebuff","targethitDebuff","targetpowDebuff","targetrateDebuff","targetspeedDebuff","Theresa","VariableBuff","augbuff","OblivioN"];
+"use strict";var grid,rCh,ghver=1.80615,dollData=[],idir='../img/t_doll/',loader=$(".loader"),dollSkill=["AimAttackCurrentTarge","AimAttackDistanceTarge","AimAttackSpecificTarge","airattack","airborne","AK12Buff","AN94Shot","AR15Shot","armor","armorBuff","armorBuffSelf","armorDebuff","armorDebuffSelf","BBNoel","bombard","Bronya","buff","Carcano1891","Carcano1938","CBJMS","Chloe","CLEAR","Coldweapon","comboBuffSelf","command","crit","critBuff","critBuffSelf","debuff","defense","dodgeBuff","dodgeBuffSelf","dodgeDebuff","empty","FAIL","fighting","Flare","Flashbomb","fortress","GGElfeldt","golden","Grenade","Himeko","hitBuff","hitBuffSelf","hitDebuff","illumine","Invincible","Invincible35","IWantU","Kaguya","Kiana","LadyMadeSTAR","Landmines","M4Nightmare","M1918","MosinNagant","Napalm","nightcritBuff","nightcritBuff38","nightcritBuffSelf","nightdodgeBuff","nightdodgeBuffSelf","nightdodgeDebuff","nighthitBuff","nighthitBuffSelf","nighthitDebuff","nightpowBuff","nightpowBuffSelf","nightpowDebuff","nightrateBuff","nightrateBuffSelf","nightrateDebuff","nightspeedDebuff","nighttargetdodgeDebuff","nighttargethitDebuff","nighttargetpowDebuff","nighttargetrateDebuff","nighttargetspeedDebuff","Noconsumption","position","powBuff","powBuffSelf","powBuffShield","powDebuff","RaidenMei","rateBuff","rateBuffSelf","rateDebuff","reinforce","rescue","RifleGrenade","roadblocks","Sakura","Seele","shield","Shotgun","Smoke","sniper","speedDebuff","target","targetdodgeDebuff","targethitDebuff","targetpowDebuff","targetrateDebuff","targetspeedDebuff","Theresa","VariableBuff","augbuff","OblivioN"];
 $(document).ready(()=>{
 	contentsload();
 	$('[data-toggle="popover"]').popover();
@@ -6,33 +6,23 @@ $(document).ready(()=>{
 //FIXME Line 12: 스킬 검색용(필터)으로 일시 지정, 추후 스킬 이름으로 변환 바람
 //FIXME Line 20: 스킬 검색용(타이핑)으로 일시 지정, 추후 스킬 이름으로 변환 바람
 function contentsload(){
-	$.ajax('../json/doll.json',{contentType:'application/json',dataType:'json',success:result=>{
-		var itemcon='<div class="tdoll item-content">',
-		allCharacters=$.map(result,(doll,index)=>{var timehour=parseInt(doll.buildTime/3600),timemin=doll.buildTime%3600/60,noval=doll.id;
+	$.ajax('../json/doll.json',{contentType:'application/json',dataType:'json',
+		success:result=>{
+		var allCharacters=$.map(result,(doll,index)=>{var timehour=parseInt(doll.buildTime/3600),timemin=doll.buildTime%3600/60,noval=doll.id;
 			noval>20000?noval="M"+(noval-20000):noval>1000&&(noval="X"+(noval-1000));
 			var character=$(`<div class="item" data-time="${timehour}${timemin}" data-type="${doll.type}" data-rarity="${doll.rarity}" data-skill="${doll.skill.src}"></div>`).detach(),
-				dollcon=`<div class="text-white no" data-no="${doll.id}">${noval}</div>
-					<p class="name podo">${doll.krName}</p>
-					<i class="star r${doll.rarity}"></i>
-					<i	class="incage doll info_cage_${doll.rarity}"></i>
-					<i class="type doll ${doll.type}_${doll.rarity}"></i>
-					<img width="175" height="276" src="https://cdn.jsdelivr.net/gh/ergo9ine/sfdb_img@${ghver}/img/t_doll/${doll.id}_i.png" style="background-color:#2c343d" onload="$(this).css('background-color','').removeAttr('onload')">
+				dollcon=`<div class="text-white no" data-no="${doll.id}">${noval}</div><p class="name podo">${doll.krName}</p><i class="star r${doll.rarity}"></i><i	class="incage doll info_cage_${doll.rarity}"></i><i class="type doll ${doll.type}_${doll.rarity}"></i><img width="175" height="276" src="https://cdn.jsdelivr.net/gh/ergo9ine/sfdb_img@${ghver}/img/t_doll/${doll.id}_i.png" style="background-color:#2c343d" onload="$(this).css('background-color','').removeAttr('onload')">
 					<div class="tag">${doll.type}/${doll.nick}/${timehour}${timemin}/${doll.voice}/${doll.illust}/${doll.skill.src}</div>`;
-			$(character).append(itemcon).find(".item-content").html(dollcon);
+			$(character).append(`<div class="tdoll item-content">`).find(".item-content").html(dollcon);
 			return character;
 		});
-			$('#grid').append(allCharacters);
-			loadComplete();
-			dollData=result;
-		},
-		timeout:10000
-	});
+			$('#grid').append(allCharacters),loadComplete();
+		  dollData=result;
+		}});
 };
 function loadComplete(){
 	grid=new Muuri('#grid',{
-		showDuration:0,
-		hideDuration:0,
-		layoutDuration:0,
+		showDuration:0,hideDuration:0,layoutDuration:0,
 		sortData:{
 			time:(item,element)=>element.getAttribute('data-time'),
 			type:(item,element)=>element.getAttribute('data-type').toUpperCase(),
@@ -67,10 +57,10 @@ function loadComplete(){
 				$.each(doll.skins,(index,value)=>{skins.push(`<button type="button" class="btn btn-warning btn-sm">${value}</button>`)});
 				$(".skinntg,#contents>div:nth-child(6)").append(skins);
 				$("#contents>div:nth-child(6)>button").addClass("btn-block")
-				$(".w3-row.text-center>div:eq(0)").append(w3img);
-				$(".w3-image").attr("src",cimg).removeAttr("width height");
-				$(".w3-left-align:nth-child(1)>div:nth-child(1)>div:nth-child(3)").html(doll.voice);
-				$(".w3-left-align:nth-child(1)>div:nth-child(3)>div:nth-child(3)").html(doll.illust);
+				$("div.row:nth-child(7)>div:nth-child(1)").append(`<img class="img-fluid">`);
+				$(".img-fluid").attr("src",cimg);
+				$(".text-left>div:nth-child(1)>div:nth-child(3)").html(doll.voice);
+				$(".w3-display-container:nth-child(3)>div:nth-child(3)").html(doll.illust);
 				$(".w3-display-container:nth-child(5)>div:nth-child(3)").html(doll.name);
 				$(".w3-display-container:nth-child(7)>div:nth-child(3)").html(time);
 				$(".w3-display-right:nth-child(4)").attr("data-content",doll.drop);
@@ -156,7 +146,7 @@ function fxts(x){
 };
 function SKB(){
 	$(".skinntg>button,#contents>div:nth-child(6)>button").click(function(){
-		var imgtag=$(".w3-image"),iX=$(this).index(),No=$(".blockquote-footer>cite:nth-child(1)").text(),Isrc=idir+No+'.png';
+		var imgtag=$(".img-fluid"),iX=$(this).index(),No=$(".blockquote-footer>cite:nth-child(1)").text(),Isrc=idir+No+'.png';
 		if(0==iX){var imgsrc=imgtag.attr("src").split(idir)[1].split(".png")[0],imgM=imgsrc.indexOf("_d"),imgT=imgsrc.slice(0,-2);-1!=imgM?(imgtag.attr("src",idir+imgT+".png")):(imgtag.attr("src",idir+imgsrc+"_d.png"))}
 		else{1==iX?imgtag.attr("src",Isrc):(--iX,Isrc=idir+No+"_"+iX+".png",imgtag.attr("src",Isrc))};
 	});

@@ -7,58 +7,62 @@
 	z-index:1;
 	margin:14.5px 12.5px
 }
-div.w3-third:nth-child(1){padding-right:0}
-div.w3-twothird:nth-child(2){margin-top:16px;margin-bottom:16px}
-div.w3-row:nth-child(3)>div:nth-child(2)>img{width:77.2px;height:77.2px}
+.ntg>div{width:150px;height:35px;color:#fff;font-size:1.5em}
+#sdc{width:144px;height:144px}
+#sec-fir,#sec-sec{height:300px}
+.w3-twothird:nth-child(2){margin-top:16px;margin-bottom:16px}
+.text-left>div:nth-child(1),.text-left>div:nth-child(1n+2){height:35px}
+.text-left>div:nth-child(2n+2){height:5px}
+.text-left>.w3-display-container>div{width:100px}
 @media all and (min-width:201px){
-	.grid {
+	#grid {
 		max-width:200px;
 	}
+	#chartcon{margin:1rem 0!important}
 }
 @media all and (min-width:401px){
-	.grid {
+	#grid {
 		max-width:400px;
 	}
 }
 @media all and (min-width:601px){
-	.grid {
+	#grid {
 		max-width:600px;
-	}
-	div.w3-third:nth-child(1){
-		padding-right:10px
 	}
 	div.w3-twothird:nth-child(2){
 	margin:auto
 	}
 }
 @media all and (min-width:801px){
-	.grid {
+	#grid {
 		max-width:800px;
 	}
 }
+@media all and (min-width:996px){
+	#chartcon{margin:0!important}
+}
 @media all and (min-width:1001px){
-	.grid {
+	#grid {
 		max-width:1000px;
 	}
 }
 @media all and (min-width:1201px){
-	.grid {
+	#grid {
 		max-width:1200px;
 	}
 }
 @media all and (min-width:1401px){
-	.grid {
+	#grid {
 		max-width:1400px;
 	}
 }
 @media all and (min-width:1601px){
-	.grid {
+	#grid {
 		max-width:1600px;
 	}
 }
 @media all and (min-width:1801px){
-	.grid {
+	#grid {
 		max-width:1800px;
 	}
-}
-}
+}}
