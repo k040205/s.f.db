@@ -56,8 +56,7 @@ function loadComplete(){
 				$.each(doll.skins,(index,value)=>{skins.push(`<button type="button" class="btn btn-warning btn-sm">${value}</button>`)});
 				$(".skinntg,#contents>div:nth-child(6)").append(skins);
 				$("#contents>div:nth-child(6)>button").addClass("btn-block")
-				$("div.row:nth-child(7)>div:nth-child(1)").append(`<img class="img-fluid">`);
-				$(".img-fluid").attr("src",cimg);
+				$(".col-lg-5:nth-child(1)>img").attr("src",cimg);
 				$(".text-left>div:nth-child(1)>div:nth-child(3)").html(doll.voice);
 				$(".w3-display-container:nth-child(3)>div:nth-child(3)").html(doll.illust);
 				$(".w3-display-container:nth-child(5)>div:nth-child(3)").html(doll.name);
@@ -144,7 +143,7 @@ function fxts(x){
 };
 function SKB(){
 	$(".skinntg>button,#contents>div:nth-child(6)>button").click(function(){
-		var imgtag=$(".img-fluid"),iX=$(this).index(),No=$(".blockquote-footer>cite:nth-child(1)").text(),Isrc=idir+No+'.png';
+		var imgtag=$(".col-lg-5:nth-child(1)>img"),iX=$(this).index(),No=$(".blockquote-footer>cite:nth-child(1)").text(),Isrc=idir+No+'.png';
 		if(0==iX){var imgsrc=imgtag.attr("src").split(idir)[1].split(".png")[0],imgM=imgsrc.indexOf("_d"),imgT=imgsrc.slice(0,-2);-1!=imgM?(imgtag.attr("src",idir+imgT+".png")):(imgtag.attr("src",idir+imgsrc+"_d.png"))}
 		else{1==iX?imgtag.attr("src",Isrc):(--iX,Isrc=idir+No+"_"+iX+".png",imgtag.attr("src",Isrc))};
 	});
@@ -155,7 +154,7 @@ function Skill(y,x){
 	function c81(a){Sdesc=`${a} 화력을 ${dmg[1]}% 상승시킨다.`};
 	function rep(a,b){Sdesc=Sdesc.replace(a,b)};
 	function pt(a){Sdesc=Sdesc.replace("1.5",a)};
-	$("div.w3-row:nth-child(3)>div:nth-child(2)>img").attr('src',"../img/etc/skill/"+dollSkill[src]+".png");
+	$("#sec-fir>div:nth-child(3)>div:nth-child(2)>img").attr('src',"../img/etc/skill/"+dollSkill[src]+".png");
 	console.log(src)
 	src==0||src==1?
 		y==148?Sdesc=`지속시간 동안 자신의 공격속도를 ${FR[1]}% 감소시키고, 화력을 ${dmg[1]}% 상승시킨다.`:
@@ -270,17 +269,17 @@ function Skill(y,x){
 	src==0||src==1||src==13||src==22||src==37||src==39||src==39||src==41||src==57||src==91||src==94||src==96||y==79||y==102||y==185||y==213||y==1004||y==1005||y==1006||y==1009||y==1010?Sdesc+`<br>선쿨${x.FCD}초/쿨타임${x.CD[1]}초`:
 	Sdesc+`<br>지속시간${time[1]}초/선쿨${x.FCD}초/쿨타임${x.CD[1]}초`;
 	y==148||y==183&&(Sdesc=Sdesc.replace(`<br>`,`<br>지속시간${time[1]}초.`));
-	$("div.w3-row:nth-child(3)>div:nth-child(2)>div:nth-child(2)").html(Sdesc);
+	$("#sec-fir>div:nth-child(3)>div:nth-child(2)>div").html(Sdesc);
 };
 function togglecon(){
 	$(".grid,#search,#func").toggleClass('d-none');
 	$("body>div:nth-child(2)").toggleClass("d-md-flex");
 	$("body>div:nth-child(3)").toggleClass("d-flex");
-	$("button.btn-warning,.img-fluid").remove();
+	$("button.btn-warning").remove();
+	$(".img-fluid").empty();
 	$("div.w3-display-container:nth-child(9)>div:nth-child(4)").removeAttr("data-content");
 	$('[data-toggle="popover"]').popover('hide');
-	$(".skinntg>button,#contents>div:nth-child(6)>button").off("click");	
-	$("div.w3-row:nth-child(3)>div:nth-child(2)>div:nth-child(2)").empty();
+	$(".skinntg>button,#contents>div:nth-child(6)>button").off("click");
 };
 $(".filter").click(function(){
 	var filtr=$(this).text();

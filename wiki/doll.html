@@ -126,6 +126,8 @@
 #sdc,#chart,#stat,#sec-fir,#sec-sec,#doll,#equip,#dolltext,#dolllore{outline:1px solid grey}
 .ntg{margin-left:-1px;width:200px;height:35px}
 .row1>div,.row2>div,.row3>div{width:25px;height:25px}
+#sec-fir>div{height:100px}
+#sec-fir>div>div:nth-child(2){height:77.2px}
 #table>div,#graph>div{height:30px;padding:0 !important}
 </style>
 <div class="d-none" id="func">
@@ -143,7 +145,7 @@
 	<button type="button" class="btn btn-secondary btn-sm">기본 코스튬</button>
 </div>
 <div class="row m-0 text-center">
-	<div class="col-lg-5 my-3 p-0"></div>
+	<div class="col-lg-5 my-3 p-0"><img class="img-fluid"></div>
 	<div class="col-lg-7 row m-0 p-0">
 		<div class="col-5 p-0 pr-lg-3" style="max-height:400px">
 			<div id="sdc" class="mx-auto"></div>
@@ -206,10 +208,10 @@
 			</div>
 			<div class="w-100"></div>
 			<div id="sec-fir" class="col-6 p-0 m-0">
-				<div class="w3-row">
-					<div class="w3-amber">TileBuff</div>
-					<div class="w3-row d-flex w3-rightbar w3-leftbar w3-border-white w3-hover-border-black">
-					<div style="margin:auto">
+				<div class="col p-0">
+					<div class="bg-warning">TileBuff</div>
+					<div class="d-flex w3-rightbar w3-leftbar w3-border-white w3-hover-border-black">
+					<div class="m-auto">
 						<div class="row1" style="display:flex">
 							<div class="border border-dark" id="grid1"></div>
 							<div class="border border-dark" id="grid2"></div>
@@ -226,49 +228,49 @@
 							<div class="border border-dark" id="grid9"></div>
 						</div>
 					</div>
-					<div class="text-center" style="width:100%;height:100%;padding:5px 10px">
+					<div class="text-center" style="width:100%;height:100%">
 					</div>
 				</div>
 				</div>
-				<div class="w3-row">
-					<div class="w3-amber">Cost</div>
-					<div class="w3-rightbar w3-leftbar w3-border-white w3-hover-border-black w3-padding"></div>
+				<div class="col p-0">
+					<div class="bg-warning">Cost</div>
+					<div class="w3-rightbar w3-leftbar w3-border-white w3-hover-border-black p-2"></div>
 				</div>
-				<div class="w3-row">
-					<div class="w3-amber">Skill</div>
-					<div class="w3-row d-flex w3-rightbar w3-leftbar w3-border-white w3-hover-border-black">
-					<img class="w3-images">
-					<div class="text-center" style="width:100%;height:100%;padding:5px 10px;overflow:auto"></div>
+				<div class="col p-0">
+					<div class="bg-warning">Skill</div>
+					<div class="d-flex w3-rightbar w3-leftbar w3-border-white w3-hover-border-black">
+						<img class="img-fluid">
+						<div class="text-center p-2 h-100 w-100" style="overflow:auto"></div>
 					</div>
 				</div>
 			</div>
 			<div id="sec-sec" class="col-6 p-0 m-0">
 				<div style="max-height:300px;height:300px">
-				<div id="carousel" class="carousel slide" data-ride="carousel" data-interval="20000">
+				<div id="carousel" class="carousel slide" data-ride="carousel" data-interval="30000">
 				<div class="carousel-inner">
 				<div class="carousel-item active">
 					<div class="bg-dark text-white">
 						<div id="table" class="row m-0">
 						<div class="col-6 bg-dark">체력</div>
-						<div class="col bg-secondary">1</div>
+						<div class="col bg-secondary"></div>
 						<div class="col-6 bg-dark">입수 방법</div>
 						<div class="col bg-secondary"></div>
 						<div class="col-6 bg-dark">화력</div>
-						<div class="col bg-secondary">2</div>
+						<div class="col bg-secondary"></div>
 						<div class="col-6 bg-dark">회피</div>
-						<div class="col bg-secondary">3</div>
+						<div class="col bg-secondary"></div>
 						<div class="col-6 bg-dark">명중</div>
-						<div class="col bg-secondary">4</div>
+						<div class="col bg-secondary"></div>
 						<div class="col-6 bg-dark">사속</div>
-						<div class="col bg-secondary">5</div>
+						<div class="col bg-secondary"></div>
 						<div class="col-6 bg-dark">치명타율</div>
-						<div class="col bg-secondary">6</div>
+						<div class="col bg-secondary"></div>
 						<div class="col-6 bg-dark">치명타 피해</div>
-						<div class="col bg-secondary">7</div>
+						<div class="col bg-secondary"></div>
 						<div class="col-6 bg-dark">방어력 관통</div>
-						<div class="col bg-secondary">8</div>
+						<div class="col bg-secondary"></div>
 						<div class="col-6 bg-dark">탄창 크기</div>
-						<div class="col bg-secondary">9</div>
+						<div class="col bg-secondary"></div>
 						</div>
 					</div>
 				</div>
@@ -306,41 +308,26 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-lg-12 p-0 my-3 mx-0 row">
-		<div class="col-5 p-0 pr-lg-3">
-			<div class="ntg w3-display-container">
-				<svg width="200" height="35"><polygon fill="grey" points="0,0 0,35 0,35 200,35 150,0"></polygon></svg>
-				<div class="w3-display-left">Acquisition</div>
-			</div>
-			<div class="w3-col" id="equip">
-				<div style="height:35px"></div>
-				<div style="height:180px"></div>
-			</div>
-		</div>
-		<div class="col-7 p-0">
-			<div class="ntg w3-display-container">
-				<svg width="200" height="35"><polygon fill="grey" points="0,0 0,35 0,35 200,35 150,0"></polygon></svg>
-				<div class="w3-display-left">Specifications</div>
-			</div>
-			<div class="w3-col" id="doll">
-				<div style="height:35px"></div>
-				<div style="height:180px"></div>
-			</div>
-		</div>
-	</div>
-	<div class="col-12 col-lg-5 p-0 pr-lg-3"> <!-- 인형대사 -->
+	<div class="col-lg-5 p-0 pr-lg-3 my-3">
 		<div class="ntg w3-display-container">
 			<svg width="200" height="35"><polygon fill="grey" points="0,0 0,35 0,35 200,35 150,0"></polygon></svg>
-			<div class="w3-display-left">Quotes</div>
+			<div class="w3-display-left">Specifications</div>
 		</div>
-		<div class="w3-col l12" id="dolltext" style="height:415px"></div>
+		<div id="doll" style="height:315px"></div>
 	</div>
-	<div class="col-12 col-lg-7 p-0 my-3 my-lg-0"> <!-- 인형로어 -->
+	<div class="col-lg-7 p-0 my-3"> <!-- 인형대사 -->
 		<div class="ntg w3-display-container">
 			<svg width="200" height="35"><polygon fill="grey" points="0,0 0,35 0,35 200,35 150,0"></polygon></svg>
 			<div class="w3-display-left">Lore</div>
 		</div>
-		<div class="w3-col l12" id="dolllore" style="height:415px"></div>
+		<div id="dolllore" style="height:315px"></div>
+	</div>
+	<div class="col-12 p-0 my-3"> <!-- 인형로어 -->
+		<div class="ntg w3-display-container">
+			<svg width="200" height="35"><polygon fill="grey" points="0,0 0,35 0,35 200,35 150,0"></polygon></svg>
+			<div class="w3-display-left">Quotes</div>
+		</div>
+		<div id="dolltext" style="height:515px"></div>
 	</div>
 </div>
 </div>
