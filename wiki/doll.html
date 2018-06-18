@@ -9,10 +9,10 @@
 <body>
 <div class="loader loader-border is-active" data-blink data-text="Loading..."><object type="image/svg+xml" data="../img/logo/SFDB_main.svg"></object></div>
 <div class="d-none d-md-flex bg-dark text-white">
-	<div class="d-flex">필터:
+	<div class="d-flex">Filter : 
 		<div class="filter btn btn-light btn-sm mr-2">All</div>
 		<div class="dropdown mr-2">
-			<a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">등급</a>
+			<a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rarity</a>
 			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 				<a class="filter dropdown-item" href="#">2성</a>
 				<a class="filter dropdown-item" href="#">3성</a>
@@ -23,7 +23,7 @@
 			</div>
 		</div>
 		<div class="dropdown mr-2">
-			<a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">타입</a>
+			<a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Type</a>
 			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 				<a class="filter dropdown-item" href="#">HG</a>
 				<a class="filter dropdown-item" href="#">SMG</a>
@@ -33,8 +33,26 @@
 				<a class="filter dropdown-item" href="#">SG</a>
 			</div>
 		</div>
-		<div class="dropdown">
-			<a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">정렬</a>
+		<div class="dropdown mr-2">
+			<a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tile</a>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+				<a class="filter dropdown-item" href="#">준비중</a>
+			</div>
+		</div>
+		<div class="dropdown mr-2">
+			<a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Voice</a>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+				<a class="filter dropdown-item" href="#">준비중</a>
+			</div>
+		</div>
+		<div class="dropdown mr-2">
+			<a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Artist</a>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+				<a class="filter dropdown-item" href="#">준비중</a>
+			</div>
+		</div>
+		<div class="dropdown mr-2">
+			<a class="btn btn-warning btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort</a>
 			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 				<a class="filter dropdown-item" href="#">도감순</a>
 				<a class="filter dropdown-item" href="#">등급</a>
@@ -45,8 +63,8 @@
 	</div>
 </div>
 <div class="d-none d-flex flex-column d-md-none bg-dark text-white">
-	<button class="flex-fill btn btn-dark">필터</button>
-	<button class="flex-fill btn btn-dark">정렬</button>
+	<button class="flex-fill btn btn-dark">Filter</button>
+	<button class="flex-fill btn btn-dark">Sort</button>
 	<div class="d-none justify-content-center text-center">
 		<div class="filter btn btn-light btn-sm">All</div>
 		<div class="dropdown d-inline">
@@ -71,10 +89,28 @@
 				<a class="filter dropdown-item" href="#">SG</a>
 			</div>
 		</div>
+		<div class="dropdown d-inline">
+			<a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tile</a>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+				<a class="filter dropdown-item" href="#">준비중</a>
+			</div>
+		</div>
+		<div class="dropdown d-inline">
+			<a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Voice</a>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+				<a class="filter dropdown-item" href="#">준비중</a>
+			</div>
+		</div>
+		<div class="dropdown d-inline">
+			<a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Artist</a>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+				<a class="filter dropdown-item" href="#">준비중</a>
+			</div>
+		</div>
 	</div>
 	<div class="d-none justify-content-center text-center">
 		<div class="dropdown">
-			<a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">정렬</a>
+			<a class="btn btn-warning btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">정렬</a>
 			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 				<a class="filter dropdown-item" href="#">도감순</a>
 				<a class="filter dropdown-item" href="#">등급</a>
@@ -90,8 +126,6 @@
 #sdc,#chart,#stat,#sec-fir,#sec-sec,#doll,#equip,#dolltext,#dolllore{outline:1px solid grey}
 .ntg{margin-left:-1px;width:200px;height:35px}
 .row1>div,.row2>div,.row3>div{width:25px;height:25px}
-#sec-fir>.w3-row{height:100px}
-#sec-fir>.w3-row>div:nth-child(2){height:77.2px}
 #table>div,#graph>div{height:30px;padding:0 !important}
 </style>
 <div class="d-none" id="func">
