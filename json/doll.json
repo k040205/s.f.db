@@ -1685,7 +1685,7 @@
 "Fx":{
 "target":"smg",
 "self":5,
-"tile":[2],
+"tile":[8],
 "TileFx":{
 "dodge":18
 }}},{
@@ -1719,7 +1719,7 @@
 "Fx":{
 "target":"smg",
 "self":5,
-"tile":[8],
+"tile":[2],
 "TileFx":{
 "dmg":25,
 "FR":10
@@ -1802,7 +1802,7 @@
 "FCD":8,
 "CD":[20,16],
 "Fx":{
-"dmg":[3,7.5]
+"dmg":[4,10]
 }},
 "illust":"PHI",
 "voice":"Kaori Yoshioka",

@@ -58,7 +58,7 @@ function loadComplete(){
 				$("#contents>div:nth-child(6)>button").addClass("btn-block")
 				$(".col-lg-5:nth-child(1)>img").attr("src",cimg);
 				$(".text-left>div:nth-child(1)>div:nth-child(3)").html(doll.voice);
-				$(".w3-left-align:nth-child(1)>div:nth-child(3)>div:nth-child(3)").html(doll.illust);
+				$(".w3-display-container:nth-child(3)>div:nth-child(3)").html(doll.illust);
 				$(".w3-display-container:nth-child(5)>div:nth-child(3)").html(doll.name);
 				$(".w3-display-container:nth-child(7)>div:nth-child(3)").html(time);
 				$(".w3-display-right:nth-child(4)").attr("data-content",doll.drop);
@@ -217,7 +217,7 @@ function Skill(y,x){
 	src==60?Sdesc=`야간작전에서 자신의 화력을 ${x.FxNight.dmg[1]}%(주간 보정치 없음) 명중을 ${hit[1]}%(주간 보정치 : ${hit[1]}%) 상승시키며 지속시간 동안 모든 공격이 치명타로 적용된다.`:
 	src==61?Sdesc=`야간작전에서 아군 전체 회피를 ${x.FxNight.dodge[1]}% 상승시킨다. (주간 보정치 : ${dodge[1]}%)`:
 	src==63?Sdesc=`야간작전에서 적군 전체 회피를 ${x.Fx.dodge[1]}% 감소시킨다. (주간 보정치 : ${dodge[1]}%)`:
-	src==67?Sdesc=`(야간)자신의 화력을 ${dmg[1]}(${x.FxNight.dmg[1]})% 상승시킨다.`:
+	src==67?Sdesc=`야간작전에서 자신의 화력을 ${x.FxNight.dmg[1]}% 상승시킨다. (주간 보정치 : ${dmg[1]}%)`:
 	src==68?Sdesc=`주간전에서 화력이 ${dmg[1]}% 치명률이 ${cri[1]}% 상승하며 야간전일 경우 명중이 ${x.FxNight.hit[1]}% 사속이 ${x.FxNight.FR[1]}% 상승한다.`:
 	src==69?Sdesc=`(야간)적군 전체 화력을 ${dmg[1]}(${x.FxNight.dmg[1]})% 하락시킨다.`:
 	src==71?Sdesc=`(야간)자신의 사속을 ${FR[1]}(${x.FxNight.FR[1]})% 상승시킨다.`:
