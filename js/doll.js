@@ -278,7 +278,7 @@ function togglecon(){
 	$("body>div:nth-child(2)").toggleClass("d-md-flex");
 	$("body>div:nth-child(3)").toggleClass("d-flex");
 	$("button.btn-warning").remove();
-	$(".img-fluid").empty();
+	$(".img-fluid").attr("src","");
 	$("div.w3-display-container:nth-child(9)>div:nth-child(4)").removeAttr("data-content");
 	$('[data-toggle="popover"]').popover('hide');
 	$(".skinntg>button,#contents>div:nth-child(6)>button").off("click");
