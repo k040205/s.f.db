@@ -44,7 +44,7 @@ function loadComplete(){
 				var simg=idir+doll.id,cimg=simg+'.png',timehour=parseInt(doll.buildTime/3600),timemin=doll.buildTime%3600/60,time=`${timehour}시간${timemin}분`,gridself=`#grid${doll.Fx.self}`,gridPos=[],skins=[];
 				$.each(doll.Fx.tile,(index,value)=>{gridPos.push(`#grid${value}`)});
 				gridPos=gridPos.toString();
-				for (var x=1;x<10;x++){$(`#grid${x}`).removeClass("bg-white bg-info bg-secondary").addClass("bg-secondary")};
+				for (var x=1;x<10;x++){$(`#grid${x}`).removeClass("bg-white aqua grey").addClass("grey")};
 				$("body,html").animate({scrollTop:0},0);
 				$(".blockquote>p:nth-child(1)").html(doll.krName);
 				$(".blockquote-footer>cite:nth-child(1)").html(doll.id);
@@ -57,8 +57,8 @@ function loadComplete(){
 				$(".w3-display-container:nth-child(5)>div:nth-child(3)").html(doll.name);
 				$(".w3-display-container:nth-child(7)>div:nth-child(3)").html(time);
 				$(".w3-display-right:nth-child(4)").attr("data-content",doll.drop);
-				$(gridself).removeClass("bg-secondary").addClass("bg-white");
-				$(gridPos).removeClass("bg-secondary").addClass("bg-info");
+				$(gridself).removeClass("grey").addClass("bg-white");
+				$(gridPos).removeClass("grey").addClass("aqua");
 				var ctx="statisticschart",statisticschart={datasets:[{label:doll.krName,backgroundColor:"rgba(255,99,132,0.2)",borderColor:"rgb(255,99,132)",pointBackgroundColor:"rgb(255,99,132)",pointBorderColor:"#fff",pointHoverBackgroundColor:"#fff",pointHoverBorderColor:"rgb(255,99,132)",borderWidth:1},{backgroundColor:"rgba(54,162,235,0.2)",borderColor:"rgb(54,162,235)",pointBackgroundColor:"rgb(54,162,235)",pointBorderColor:"#fff",pointHoverBackgroundColor:"#fff",pointHoverBorderColor:"rgb(54,162,235)",borderWidth:1}]},chartOptions={maintainAspectRatio:false,title:{display:false},scale:{ticks:{fontSize:9,beginAtZero:true}},scaleLabel:{display:false}};
 				chrtset(doll,statisticschart);
 				fxts(doll.Fx);
@@ -147,7 +147,7 @@ function Skill(y,x){
 	function rep(a,b){Sdesc=Sdesc.replace(a,b)};
 	function pt(a){Sdesc=Sdesc.replace("1.5",a)};
 	$("#sec-fir>div:nth-child(3)>div:nth-child(2)>img").attr('src',"../img/etc/skill/"+dollSkill[src]+".png");
-	console.log(src)
+	//console.log(src)
 	src==0||src==1?
 		y==148?Sdesc=`지속시간 동안 자신의 공격속도를 ${FR[1]}% 감소시키고, 화력을 ${dmg[1]}% 상승시킨다.`:
 		y==183?Sdesc=`1초간 조준 후 특수한 탄환을 발사하여 공격력의 ${dmg1[1]/10}배의 피해를 입히고 3초간 받는 피해량을 ${dmg2[1]}% 증가시키며 아군의 화력을 집중시킨다. 보스급의 적을 우선 조준하며 컨텐더의 위치에 따라 전열 : 가장 멀리있는 / 중간 : 가장 체력이 많은 / 후열 : 가장 가까운 적을 조준한다.`:
@@ -315,4 +315,9 @@ $("div.d-flex:nth-child(1)>div:nth-child(5)>div:nth-child(2)>a").click(function(
 	voice=="나즈카 카오리"?Sval(VA[0]):
 	voice=="마츠이 에리코"?Sval(VA[1]):
 	voice=="준비중"&&``;
+});
+$(".text-left>div:nth-child(1)>div:nth-child(3),.text-left>div:nth-child(3)>div:nth-child(3)").click(function(){
+	var ClickText=$(this).text();
+	togglecon();
+	Sval(ClickText);
 });
