@@ -10,13 +10,12 @@ function contentsload(){
 		var allCharacters=$.map(result,(doll,index)=>{var timehour=parseInt(doll.buildTime/3600),timemin=doll.buildTime%3600/60,noval=doll.id;
 			noval>20000?noval="M"+(noval-20000):noval>1000&&(noval="X"+(noval-1000));
 			var character=$(`<div class="item" data-time="${timehour}${timemin}" data-type="${doll.type}" data-rarity="${doll.rarity}" data-skill="${doll.skill.src}"></div>`).detach(),
-				dollcon=`<div class="text-white no" data-no="${doll.id}">${noval}</div><p class="name podo">${doll.krName}</p><i class="star r${doll.rarity}"></i><i	class="incage doll info_cage_${doll.rarity}"></i><i class="type doll ${doll.type}_${doll.rarity}"></i><img width="175" height="276" src="https://cdn.jsdelivr.net/gh/ergo9ine/sfdb_img@${ghver}/img/t_doll/${doll.id}_i.png" style="background-color:#2c343d" onload="$(this).css('background-color','').removeAttr('onload')">
-					<div class="tag">${doll.type}/${doll.nick}/${timehour}${timemin}/${doll.voice}/${doll.illust}/${doll.skill.src}</div>`;
+				dollcon=`<div class="text-white no" data-no="${doll.id}">${noval}</div><p class="name podo">${doll.krName}</p><i class="star r${doll.rarity}"></i><i	class="incage doll info_cage_${doll.rarity}"></i><i class="type doll ${doll.type}_${doll.rarity}"></i><img width="175" height="276" src="https://cdn.jsdelivr.net/gh/ergo9ine/sfdb_img@${ghver}/img/t_doll/${doll.id}_i.png" style="background-color:#2c343d" onload="$(this).css('background-color','').removeAttr('onload')"><div class="tag">${doll.type}/${doll.nick}/${timehour}${timemin}/${doll.voice}/${doll.illust}/${doll.skill.src}</div>`;
 			$(character).append(`<div class="tdoll item-content">`).find(".item-content").html(dollcon);
 			return character;
 		});
 		$('#grid').append(allCharacters),loadComplete();
-		 dollData=result;
+		dollData=result;
 		}});
 };
 function loadComplete(){
@@ -35,12 +34,8 @@ function loadComplete(){
 		'hide':function(){$(this).removeClass('muuri-item-shown');filter('.muuri-item-shown')},
 		'show':function(){$(this).addClass('muuri-item-shown');filter('.muuri-item-shown')}
 	});
-	$("button.flex-fill:nth-child(1)").click(()=>{
-		$("div.justify-content-center:nth-child(3)").toggleClass("d-none"),$("div.justify-content-center:nth-child(4)").addClass("d-none")
-	});
-	$("button.flex-fill:nth-child(2)").click(()=>{
-		$("div.justify-content-center:nth-child(4)").toggleClass("d-none"),$("div.justify-content-center:nth-child(3)").addClass("d-none")
-	});
+	$("button.flex-fill:nth-child(1)").click(()=>{$("div.justify-content-center:nth-child(3)").toggleClass("d-none"),$("div.justify-content-center:nth-child(4)").addClass("d-none")});
+	$("button.flex-fill:nth-child(2)").click(()=>{$("div.justify-content-center:nth-child(4)").toggleClass("d-none"),$("div.justify-content-center:nth-child(3)").addClass("d-none")});
 	$(".item-content").click(function(){
 		$(".grid,#search,#func").toggleClass('d-none'),$("body>div:nth-child(2)").toggleClass("d-md-flex"),$("body>div:nth-child(3)").toggleClass("d-flex");
 		var clicked=$(this).children(".no").attr("data-no");
@@ -49,7 +44,7 @@ function loadComplete(){
 				var simg=idir+doll.id,cimg=simg+'.png',timehour=parseInt(doll.buildTime/3600),timemin=doll.buildTime%3600/60,time=`${timehour}시간${timemin}분`,gridself=`#grid${doll.Fx.self}`,gridPos=[],skins=[];
 				$.each(doll.Fx.tile,(index,value)=>{gridPos.push(`#grid${value}`)});
 				gridPos=gridPos.toString();
-				for (var x=1;x<10;x++){$(`#grid${x}`).removeClass("w3-white w3-aqua w3-grey").addClass("w3-grey")};
+				for (var x=1;x<10;x++){$(`#grid${x}`).removeClass("bg-white bg-info bg-secondary").addClass("bg-secondary")};
 				$("body,html").animate({scrollTop:0},0);
 				$(".blockquote>p:nth-child(1)").html(doll.krName);
 				$(".blockquote-footer>cite:nth-child(1)").html(doll.id);
@@ -62,8 +57,8 @@ function loadComplete(){
 				$(".w3-display-container:nth-child(5)>div:nth-child(3)").html(doll.name);
 				$(".w3-display-container:nth-child(7)>div:nth-child(3)").html(time);
 				$(".w3-display-right:nth-child(4)").attr("data-content",doll.drop);
-				$(gridself).removeClass("w3-grey").addClass("w3-white");
-				$(gridPos).removeClass("w3-grey").addClass("w3-aqua");
+				$(gridself).removeClass("bg-secondary").addClass("bg-white");
+				$(gridPos).removeClass("bg-secondary").addClass("bg-info");
 				var ctx="statisticschart",statisticschart={datasets:[{label:doll.krName,backgroundColor:"rgba(255,99,132,0.2)",borderColor:"rgb(255,99,132)",pointBackgroundColor:"rgb(255,99,132)",pointBorderColor:"#fff",pointHoverBackgroundColor:"#fff",pointHoverBorderColor:"rgb(255,99,132)",borderWidth:1},{backgroundColor:"rgba(54,162,235,0.2)",borderColor:"rgb(54,162,235)",pointBackgroundColor:"rgb(54,162,235)",pointBorderColor:"#fff",pointHoverBackgroundColor:"#fff",pointHoverBorderColor:"rgb(54,162,235)",borderWidth:1}]},chartOptions={maintainAspectRatio:false,title:{display:false},scale:{ticks:{fontSize:9,beginAtZero:true}},scaleLabel:{display:false}};
 				chrtset(doll,statisticschart);
 				fxts(doll.Fx);
@@ -74,15 +69,13 @@ function loadComplete(){
 			}
 		})
 	});
-	$("button.btn-dark:nth-child(5)").click(()=>{
-		$("#contents>div:nth-child(6)").toggleClass("d-none d-block")
-	});
-	$(".xfunc").click(()=>{
-		rCh.destroy(),togglecon();
-	});
+	$("button.btn-dark:nth-child(5)").click(()=>{$("#contents>div:nth-child(6)").toggleClass("d-none d-block")});
+	$(".xfunc").click(()=>{rCh.destroy(),togglecon()});
 };
 function sort(a){grid.sort(a)};
 function filter(a){grid.filter(`${a}`)};
+function Sval(a){$("#search").val(a),$("#search").click()};
+var VA=["Kaori Nazuka","Eriko Matsui"]
 function chrtset(x,y){
 	var D="편제당<br>탄약 C,식량 M 소모"
 	"true"==x.mod?(Set1(2),table(2)):(Set1(1),table(1));
@@ -114,8 +107,7 @@ function chrtset(x,y){
 			$(`#table>div:nth-child(${n})`).html(a);
 			if ($("#table>div:nth-child(20)").text()=="undefined"){$("#table>div:nth-child(20)").text("")};
 			if (Array.isArray(x.drop)==true){$("#table>div:nth-child(4)>.btn-group>button:nth-child(3)").removeAttr("disabled").addClass("text-white")};
-		}
-	}
+		}}
 	function Set1(z){y.labels=["체력","화력","회피","사속","명중"];y.datasets[0].data=[x.hp[z],x.dmg[z],x.dodge[z],x.FR[z],x.hit[z]]};
 	function Set2(a,b,c,d){y.datasets[1].label=a+"평균";y.datasets[1].data=b;D=D.replace("C",c).replace("M",d)};
 	$("#sec-fir>div:nth-child(2)>div:nth-child(2)").html(D);
@@ -266,7 +258,7 @@ function Skill(y,x){
 	src==107?Sdesc=`자신의 버프칸에 위치한 아군 인형에게 그 종류에 따라 강화 부여 : HG/SMG 회피 ${dodge[1]}% 상승 RF/AR 화력 ${dmg[1]}% 상승 MG/SG 명중 ${hit[1]}% 상승`:
 	src==108?Sdesc=`자신의 명중을 ${hit[1]}% 감소시키는 대신 사속을 150까지 상승시키고 난사합니다.`:
 	src==109&&(Sdesc=`스킬 지속시간 동안 쌍총으로 공격하여 2회의 피해를 입히며 반드시 치명타가 됩니다.`);
-	Sdesc=y==5||y==11||y==47||y==174||y==200||y==20005?Sdesc+`<br>지속시간${time[1]}(${x.FxNight.time[1]})초/선쿨${x.FCD}초/쿨타임${x.CD[1]}초`:
+	Sdesc=y==5||y==11||y==47||y==174||y==200||y==20005?Sdesc+`<br>지속시간${x.FxNight.time[1]}초(주간 보정치 : ${time[1]}초)/선쿨${x.FCD}초/쿨타임${x.CD[1]}초`:
 	src==94||y==77||y==85||y==109||y==173?Sdesc+``:
 	src==0||src==1||src==13||src==22||src==37||src==39||src==39||src==41||src==57||src==91||src==94||src==96||y==79||y==102||y==185||y==213||y==1004||y==1005||y==1006||y==1009||y==1010?Sdesc+`<br>선쿨${x.FCD}초/쿨타임${x.CD[1]}초`:
 	Sdesc+`<br>지속시간${time[1]}초/선쿨${x.FCD}초/쿨타임${x.CD[1]}초`;
@@ -283,7 +275,7 @@ function togglecon(){
 	$('[data-toggle="popover"]').popover('hide');
 	$(".skinntg>button,#contents>div:nth-child(6)>button").off("click");
 };
-$(".filter").click(function(){
+$(".filter,.dropdown-menu>a").click(function(){
 	var filtr=$(this).text();
 	filtr=="2성"?filter('[data-rarity="2"]'):
 	filtr=="3성"?filter('[data-rarity="3"]'):
@@ -317,4 +309,10 @@ $(".filter").click(function(){
 	filtr=="등급"?sort("rarity"):
 	filtr=="제조시간"?sort("time"):
 	filtr=="타입"&&sort("type");
+});
+$("div.d-flex:nth-child(1)>div:nth-child(5)>div:nth-child(2)>a").click(function(){
+	var voice=$(this).text();
+	voice=="나즈카 카오리"?Sval(VA[0]):
+	voice=="마츠이 에리코"?Sval(VA[1]):
+	voice=="준비중"&&``;
 });
