@@ -14,6 +14,8 @@
 .text-left>div:nth-child(1),.text-left>div:nth-child(1n+2){height:35px}
 .text-left>div:nth-child(2n+2){height:5px}
 .text-left>.w3-display-container>div{width:100px}
+#VAinput::placeholder{color:hotpink!important}
+.VoC{max-height:200px;overflow-y:auto}
 @media all and (min-width:201px){
 	#grid {
 		max-width:200px;

@@ -1222,7 +1222,7 @@
 "dmg":[32,70]
 }},
 "illust":"Evan揚",
-"voice":"Ai Shimizu ",
+"voice":"Ai Shimizu",
 "buildTime":16200,
 "drop":["0-1","4-4","4-2e","5-2"],
 "skins":["로맨틱 임무"],
@@ -1313,7 +1313,7 @@
 "dmg":[15,35]
 }},
 "illust":"芙芙酱",
-"voice":"Ai Kayano ",
+"voice":"Ai Kayano",
 "buildTime":16800,
 "nick":["부츠","카구팔"],
 "Fx":{
@@ -1523,7 +1523,7 @@
 "dmg":[35,80]
 }},
 "illust":"RAN",
-"voice":"Ai Kayano ",
+"voice":"Ai Kayano",
 "buildTime":17100,
 "drop":["8-4e"],
 "skins":["루돌프","무더위 속 임무"],
@@ -6149,7 +6149,7 @@
 }}},{
 "id":204,
 "krName":"발리스타",
-"name":"FN Ballista ",
+"name":"FN Ballista",
 "type":"rf",
 "rarity":5,
 "hp":[41,82],

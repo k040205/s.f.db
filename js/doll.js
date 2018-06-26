@@ -1,6 +1,8 @@
 "use strict";var grid,rCh,ghver=1.80623,dollData=[],idir='../img/t_doll/',loader=$(".loader"),dollSkill=["AimAttackCurrentTarge","AimAttackDistanceTarge","AimAttackSpecificTarge","airattack","airborne","AK12Buff","AN94Shot","AR15Shot","armor","armorBuff","armorBuffSelf","armorDebuff","armorDebuffSelf","BBNoel","bombard","Bronya","buff","Carcano1891","Carcano1938","CBJMS","Chloe","CLEAR","Coldweapon","comboBuffSelf","command","crit","critBuff","critBuffSelf","debuff","defense","dodgeBuff","dodgeBuffSelf","dodgeDebuff","empty","FAIL","fighting","Flare","Flashbomb","fortress","GGElfeldt","golden","Grenade","Himeko","hitBuff","hitBuffSelf","hitDebuff","illumine","Invincible","Invincible35","IWantU","Kaguya","Kiana","LadyMadeSTAR","Landmines","M4Nightmare","M1918","MosinNagant","Napalm","nightcritBuff","nightcritBuff38","nightcritBuffSelf","nightdodgeBuff","nightdodgeBuffSelf","nightdodgeDebuff","nighthitBuff","nighthitBuffSelf","nighthitDebuff","nightpowBuff","nightpowBuffSelf","nightpowDebuff","nightrateBuff","nightrateBuffSelf","nightrateDebuff","nightspeedDebuff","nighttargetdodgeDebuff","nighttargethitDebuff","nighttargetpowDebuff","nighttargetrateDebuff","nighttargetspeedDebuff","Noconsumption","position","powBuff","powBuffSelf","powBuffShield","powDebuff","RaidenMei","rateBuff","rateBuffSelf","rateDebuff","reinforce","rescue","RifleGrenade","roadblocks","Sakura","Seele","shield","Shotgun","Smoke","sniper","speedDebuff","target","targetdodgeDebuff","targethitDebuff","targetpowDebuff","targetrateDebuff","targetspeedDebuff","Theresa","VariableBuff","augbuff","OblivioN"];
+var VoActor=["나즈카 카오리","마츠이 에리코","마이하라 유메","무카이야마 나오미","미사키 마미","미타라이 카린","사토 리나","사쿠마 히로미","스자키 아야","시노하라 나루미","시미즈 아이"];
+var VA=["Kaori Nazuka","Eriko Matsui","Yume Maihara","Naomi Mukaiyama","Mami Misaki","Karin Mitarai","Rina Sato","Hiromi Sakuma","Aya Suzaki","Narumi Sinohara","Ai Shimizu"];
 $(document).ready(()=>{
-	contentsload(),$('[data-toggle="popover"]').popover();
+	contentsload(),$('[data-toggle="popover"]').popover()
 });
 //FIXME Line 12: 스킬 검색용(필터)으로 일시 지정, 추후 스킬 이름으로 변환 바람
 //FIXME Line 20: 스킬 검색용(타이핑)으로 일시 지정, 추후 스킬 이름으로 변환 바람
@@ -10,13 +12,13 @@ function contentsload(){
 		var allCharacters=$.map(result,(doll,index)=>{var timehour=parseInt(doll.buildTime/3600),timemin=doll.buildTime%3600/60,noval=doll.id;
 			noval>20000?noval="M"+(noval-20000):noval>1000&&(noval="X"+(noval-1000));
 			var character=$(`<div class="item" data-time="${timehour}${timemin}" data-type="${doll.type}" data-rarity="${doll.rarity}" data-skill="${doll.skill.src}"></div>`).detach(),
-				dollcon=`<div class="text-white no" data-no="${doll.id}">${noval}</div><p class="name podo">${doll.krName}</p><i class="star r${doll.rarity}"></i><i	class="incage doll info_cage_${doll.rarity}"></i><i class="type doll ${doll.type}_${doll.rarity}"></i><img width="175" height="276" src="https://cdn.jsdelivr.net/gh/ergo9ine/sfdb_img@${ghver}/img/t_doll/${doll.id}_i.png" style="background-color:#2c343d" onload="$(this).css('background-color','').removeAttr('onload')"><div class="tag">${doll.type}/${doll.nick}/${timehour}${timemin}/${doll.voice}/${doll.illust}/${doll.skill.src}</div>`;
+				dollcon=`<div class="text-white no" data-no="${doll.id}">${noval}</div><p class="name podo">${doll.krName}</p><i class="star r${doll.rarity}"></i><i class="incage doll info_cage_${doll.rarity}"></i><i class="type doll ${doll.type}_${doll.rarity}"></i><img width="175" height="276" src="https://cdn.jsdelivr.net/gh/ergo9ine/sfdb_img@${ghver}/img/t_doll/${doll.id}_i.png" style="background-color:#2c343d" onload="$(this).css('background-color','').removeAttr('onload')"><div class="tag">${doll.type}/${doll.nick}/${timehour}${timemin}/${doll.voice}/${doll.illust}/${doll.skill.src}</div>`;
 			$(character).append(`<div class="tdoll item-content">`).find(".item-content").html(dollcon);
-			return character;
+			return character
 		});
 		$('#grid').append(allCharacters),loadComplete();
-		dollData=result;
-		}});
+		dollData=result
+		}})
 };
 function loadComplete(){
 	grid=new Muuri('#grid',{
@@ -33,6 +35,11 @@ function loadComplete(){
 		'bind':'keyup keydown click input',
 		'hide':function(){$(this).removeClass('muuri-item-shown');filter('.muuri-item-shown')},
 		'show':function(){$(this).addClass('muuri-item-shown');filter('.muuri-item-shown')}
+	});
+	$('#VAinput').quicksearch('.VA',{
+		'bind':'keyup keydown click input',
+		'hide':function(){$(this).addClass('d-none')},
+		'show':function(){$(this).removeClass('d-none')}
 	});
 	$("button.flex-fill:nth-child(1)").click(()=>{$("div.justify-content-center:nth-child(3)").toggleClass("d-none"),$("div.justify-content-center:nth-child(4)").addClass("d-none")});
 	$("button.flex-fill:nth-child(2)").click(()=>{$("div.justify-content-center:nth-child(4)").toggleClass("d-none"),$("div.justify-content-center:nth-child(3)").addClass("d-none")});
@@ -72,10 +79,13 @@ function loadComplete(){
 	$("button.btn-dark:nth-child(5)").click(()=>{$("#contents>div:nth-child(6)").toggleClass("d-none d-block")});
 	$(".xfunc").click(()=>{rCh.destroy(),togglecon()});
 };
+function VAfltr(a){
+	var b=cho_hangul(a)
+	$(".VoC").append(`<a class="dropdown-item VA" href="#"><span>${a}</span><span class="d-none">${b}/</span></a>`)
+};
 function sort(a){grid.sort(a)};
 function filter(a){grid.filter(`${a}`)};
 function Sval(a){$("#search").val(a),$("#search").click()};
-var VA=["Kaori Nazuka","Eriko Matsui"]
 function chrtset(x,y){
 	var D="편제당<br>탄약 C,식량 M 소모"
 	"true"==x.mod?(Set1(2),table(2)):(Set1(1),table(1));
@@ -275,6 +285,7 @@ function togglecon(){
 	$('[data-toggle="popover"]').popover('hide');
 	$(".skinntg>button,#contents>div:nth-child(6)>button").off("click");
 };
+VoActor.forEach(VAfltr);
 $(".filter,.dropdown-menu>a").click(function(){
 	var filtr=$(this).text();
 	filtr=="2성"?filter('[data-rarity="2"]'):
@@ -290,16 +301,10 @@ $(".filter,.dropdown-menu>a").click(function(){
 	filtr=="SG"?filter('[data-type="sg"]'):
 	filtr=="제조불가"?filter('[data-time="00"]'):
 	/*
-	case "특전":
-		grid.filter('[data-time="00"]')
-	break;
 	case "타일효과":
 		grid.filter('[data-time="00"]')
 	break;
 	case "일러스트레이터":
-		grid.filter('[data-time="00"]')
-	break;
-	case "성우":
 		grid.filter('[data-time="00"]')
 	break;
 	*/
@@ -310,14 +315,22 @@ $(".filter,.dropdown-menu>a").click(function(){
 	filtr=="제조시간"?sort("time"):
 	filtr=="타입"&&sort("type");
 });
-$("div.d-flex:nth-child(1)>div:nth-child(5)>div:nth-child(2)>a").click(function(){
-	var voice=$(this).text();
-	voice=="나즈카 카오리"?Sval(VA[0]):
-	voice=="마츠이 에리코"?Sval(VA[1]):
-	voice=="준비중"&&``;
+$(".VA").click(function(){
+	var voice=$(this).find("span:nth-child(1)").text();
+	Sval(VA[VoActor.indexOf(voice)])
 });
 $(".text-left>div:nth-child(1)>div:nth-child(3),.text-left>div:nth-child(3)>div:nth-child(3)").click(function(){
 	var ClickText=$(this).text();
 	togglecon();
 	Sval(ClickText);
 });
+function cho_hangul(str){
+	var cho=["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
+	var result = "";
+	var i;
+	for(i=0;i<str.length;i++) {
+		var code = str.charCodeAt(i)-44032;
+		if(code>-1 && code<11172) result += cho[Math.floor(code/588)];
+	}
+	return result;
+}
