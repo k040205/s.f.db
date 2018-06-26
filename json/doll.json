@@ -2121,7 +2121,7 @@
 "time":[3,5]
 }},
 "illust":"spirtie",
-"voice":"Miki Amano",
+"voice":"Mirai Amano",
 "buildTime":9600,
 "drop":["1-4e,2-2 이후 모든 전장"],
 "Fx":{
@@ -2685,7 +2685,7 @@
 "time":[1.8,3.2]
 }},
 "illust":"小迪",
-"voice":"Saya Horigom",
+"voice":"Saya Horigome",
 "buildTime":5100,
 "drop":["0-1","0-2","0-3","0-4","2-4e","3-2","3-3","3-4","3-5","3-6","3-1e","3-2e","3-3e","3-4e","4-1","4-2","4-3","4-4","4-5","4-6","4-1e","4-2e","4-3e","4-4e","5-1","5-2","5-3","5-4","5-5","5-6","5-1e","5-2e","5-3e","5-4e","7-6","7-4e","8-1","8-2","8-3","8-4","8-5","8-6","8-1e","8-2e","8-3e","8-4e"],
 "skins":["떠돌이 마녀","물 선녀복"],
@@ -3903,7 +3903,7 @@
 "time":[9,15]
 }},
 "illust":"TOMATO",
-"voice":"Saya Horigom",
+"voice":"Saya Horigome",
 "buildTime":9900,
 "drop":["6-1","6-2","6-3","6-4","6-5","6-6","6-1e","6-2e","6-3e","6-4e","7-1","7-2","7-3","7-4","7-5","7-6","7-1e","8-2","8-4"],
 "skins":["현황의 봉황"],
@@ -6978,6 +6978,7 @@
 "dodge":[76,77,78],
 "hit":[51,51,52],
 "FR":[58,58,58],
+"voice":"Eriko Matsui",
 "buildTime":0,
 "Fx":{
 "target":"all",
@@ -7011,6 +7012,7 @@
 "dodge":[98,99,100],
 "hit":[47,48,48],
 "FR":[45,45,45],
+"voice":"Narumi Sinohara",
 "buildTime":0,
 "Fx":{
 "target":"all",
@@ -7048,6 +7050,7 @@
 "dodge":[39,39,40],
 "hit":[87,88,89],
 "FR":[31,31,31],
+"voice":"Uesaka Sumire",
 "buildTime":0,
 "Fx":{
 "target":"hg",
@@ -7080,6 +7083,7 @@
 "dodge":[33,33,33],
 "hit":[62,63,64],
 "FR":[34,34,34],
+"voice":"Mami Misaki",
 "buildTime":0,
 "Fx":{
 "target":"hg",
@@ -7112,6 +7116,7 @@
 "dodge":[49,49,50],
 "hit":[49,49,50],
 "FR":[80,80,80],
+"voice":"Haruka Tomatsu",
 "buildTime":0,
 "nick":["엠포챠","혐포"],
 "Fx":{
@@ -7145,6 +7150,7 @@
 "dodge":[51,51,52],
 "hit":[54,54,55],
 "FR":[78,78,78],
+"voice":"Emiri Katou",
 "buildTime":0,
 "Fx":{
 "target":"smg",
@@ -7175,6 +7181,7 @@
 "hit":[33,34,34],
 "dodge":[33,34,34],
 "FR":[115,115,115],
+"voice":"Yuuki Aoi",
 "buildTime":0,
 "Fx":{
 "target":"sg",
@@ -7210,6 +7217,7 @@
 "hit":[56,57,57],
 "dodge":[78,79,80],
 "FR":[60,60,60],
+"voice":"Iori Nomizu",
 "buildTime":0,
 "Fx":{
 "target":"all",
@@ -7242,6 +7250,7 @@
 "hit":[16,16,16],
 "dodge":[90,91,92],
 "FR":[75,75,75],
+"voice":"Ito Asuka",
 "buildTime":0,
 "Fx":{
 "target":"ar",
@@ -7272,6 +7281,7 @@
 "hit":[12,12,12],
 "dodge":[69,70,70],
 "FR":[93,93,93],
+"voice":"Saya Horigome",
 "buildTime":0,
 "Fx":{
 "target":"ar",
