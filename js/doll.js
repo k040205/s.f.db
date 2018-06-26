@@ -36,7 +36,7 @@ function loadComplete(){
 		'hide':function(){$(this).removeClass('muuri-item-shown');filter('.muuri-item-shown')},
 		'show':function(){$(this).addClass('muuri-item-shown');filter('.muuri-item-shown')}
 	});
-	$('#VAinput').quicksearch('.VA',{
+	$('.VAinput').quicksearch('.VA',{
 		'bind':'keyup keydown click change blur focus',
 		'hide':function(){$(this).addClass('d-none')},
 		'show':function(){$(this).removeClass('d-none')}
