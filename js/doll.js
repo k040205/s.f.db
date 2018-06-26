@@ -59,8 +59,8 @@ function loadComplete(){
 				$(".skinntg,#contents>div:nth-child(6)").append(skins);
 				$("#contents>div:nth-child(6)>button").addClass("btn-block")
 				$(".col-lg-5:nth-child(1)>img").attr("src",cimg);
-				$(".text-left>div:nth-child(1)>div:nth-child(3)").html(doll.voice);
-				$(".w3-display-container:nth-child(3)>div:nth-child(3)").html(doll.illust);
+				$(".text-left>div:nth-child(1)>div:nth-child(3)>a").text(doll.voice);
+				$(".w3-display-container:nth-child(3)>div:nth-child(3)>a").text(doll.illust);
 				$(".w3-display-container:nth-child(5)>div:nth-child(3)").html(doll.name);
 				$(".w3-display-container:nth-child(7)>div:nth-child(3)").html(time);
 				$(".w3-display-right:nth-child(4)").attr("data-content",doll.drop);
