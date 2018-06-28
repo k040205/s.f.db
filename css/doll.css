@@ -17,6 +17,7 @@
 .d-flex>svg:nth-child(1)>polygon{fill:grey}
 .d-flex>svg:nth-child(2)>polygon{fill:rgba(255,193,7,0.5)}
 svg>text{dominant-baseline:central;text-anchor:middle;fill:white}
+#chart{background-color:white}
 #CV,#illust,#GN,#Time,#Drop{dominant-baseline:central;text-anchor:middle}
 #CV,#illust,#Drop{fill:#261dae}
 #GN,#Time{fill:black}
