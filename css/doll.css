@@ -7,20 +7,7 @@
 	z-index:1;
 	margin:14.5px 12.5px
 }
-.ntg>div{width:150px;height:35px;color:#fff;font-size:1.5em}
-#sdc{width:144px;height:144px}
-#sec-fir,#sec-sec{height:300px}
-.text-left>.w3-display-container>div{width:100px}
-#VAinput::placeholder{color:hotpink!important}
-.VoC{max-height:200px;overflow-y:auto}
-.col-6.svg.mx-auto{max-width:125px;max-height:35px;overflow:visible}
-.d-flex>svg:nth-child(1)>polygon{fill:grey}
-.d-flex>svg:nth-child(2)>polygon{fill:rgba(255,193,7,0.5)}
-svg>text{dominant-baseline:central;text-anchor:middle;fill:white}
-#chart{background-color:white}
-#CV,#illust,#GN,#Time,#Drop{dominant-baseline:central;text-anchor:middle}
-#CV,#illust,#Drop{fill:#261dae}
-#GN,#Time{fill:black}
+.ntg>div{width:150px;height:35px;color:#fff;font-size:1.5em}#sdc{width:144px;height:144px}#sec-fir,#sec-sec{height:300px}.text-left>.w3-display-container>div{width:100px}#VAinput::placeholder{color:#ff69b4!important}.VoC{max-height:200px;overflow-y:auto}.col-6.svg.mx-auto{max-width:125px;max-height:35px;overflow:visible}.d-flex>svg:nth-child(1)>polygon{fill:gray}.d-flex>svg:nth-child(2)>polygon{fill:rgba(255,193,7,.5)}svg>text{fill:#fff}#chart{background-color:#fff}#CV,#Drop,#GN,#Time,#illust,svg>text{dominant-baseline:central;text-anchor:middle}#CV,#Drop,#illust{fill:#261dae}#GN,#Time{fill:#000}
 @media all and (min-width:201px){
 	#grid {
 		max-width:200px;
