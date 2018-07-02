@@ -8,119 +8,57 @@
 </head>
 <body>
 <div class="loader loader-border is-active" data-blink data-text="Loading..."><object type="image/svg+xml" data="../img/logo/SFDB_main.svg"></object></div>
-<div class="d-none d-md-flex bg-dark text-white">
-	<div class="d-flex">
-		<div class="filter btn btn-light btn-sm mr-2">All</div>
-		<div class="dropdown mr-2">
-			<a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rarity</a>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<a class="dropdown-item" href="#">2성</a>
-				<a class="dropdown-item" href="#">3성</a>
-				<a class="dropdown-item" href="#">4성</a>
-				<a class="dropdown-item" href="#">5성</a>
-				<a class="dropdown-item" href="#">EXTRA</a>
-				<a class="dropdown-item" href="#">제조불가</a>
-			</div>
-		</div>
-		<div class="dropdown mr-2">
-			<a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Type</a>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<a class="dropdown-item" href="#">HG</a>
-				<a class="dropdown-item" href="#">SMG</a>
-				<a class="dropdown-item" href="#">AR</a>
-				<a class="dropdown-item" href="#">RF</a>
-				<a class="dropdown-item" href="#">MG</a>
-				<a class="dropdown-item" href="#">SG</a>
-			</div>
-		</div>
-		<div class="dropdown mr-2">
-			<a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tile</a>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<a class="dropdown-item" href="#">준비중</a>
-			</div>
-		</div>
-		<div class="dropdown mr-2">
-			<a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Voice</a>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<input placeholder="성우 검색" class="VAinput dropdown-item bg-dark text-white form-control form-control-sm col-10 mx-auto p-1" type="text">
-				<div class="dropdown-divider"></div>
-				<div class="VoC"></div>
-			</div>
-		</div>
-		<div class="dropdown mr-2">
-			<a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Artist</a>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<a class="dropdown-item" href="#">준비중</a>
-			</div>
-		</div>
-		<div class="dropdown mr-2">
-			<a class="btn btn-warning btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort</a>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<a class="dropdown-item" href="#">도감순</a>
-				<a class="dropdown-item" href="#">등급</a>
-				<a class="dropdown-item" href="#">제조시간</a>
-				<a class="dropdown-item" href="#">타입</a>
-			</div>
+<div id="filter" class="d-flex bg-dark text-white justify-content-center">
+	<div class="filter btn btn-light btn-sm mr-2">All</div>
+	<div class="dropdown mr-2">
+		<a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rarity</a>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+			<a class="dropdown-item" href="#">2성</a>
+			<a class="dropdown-item" href="#">3성</a>
+			<a class="dropdown-item" href="#">4성</a>
+			<a class="dropdown-item" href="#">5성</a>
+			<a class="dropdown-item" href="#">EXTRA</a>
+			<a class="dropdown-item" href="#">제조불가</a>
 		</div>
 	</div>
-</div>
-<div class="d-none d-flex flex-column d-md-none bg-dark text-white">
-	<button class="flex-fill btn btn-dark">Filter</button>
-	<button class="flex-fill btn btn-dark">Sort</button>
-	<div class="d-none justify-content-center text-center">
-		<div class="filter btn btn-light btn-sm">All</div>
-		<div class="dropdown d-inline">
-			<a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">등급</a>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<a class="dropdown-item" href="#">2성</a>
-				<a class="dropdown-item" href="#">3성</a>
-				<a class="dropdown-item" href="#">4성</a>
-				<a class="dropdown-item" href="#">5성</a>
-				<a class="dropdown-item" href="#">EXTRA</a>
-				<a class="dropdown-item" href="#">제조불가</a>
-			</div>
-		</div>
-		<div class="dropdown d-inline">
-			<a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">타입</a>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<a class="dropdown-item" href="#">HG</a>
-				<a class="dropdown-item" href="#">SMG</a>
-				<a class="dropdown-item" href="#">AR</a>
-				<a class="dropdown-item" href="#">RF</a>
-				<a class="dropdown-item" href="#">MG</a>
-				<a class="dropdown-item" href="#">SG</a>
-			</div>
-		</div>
-		<div class="dropdown d-inline">
-			<a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tile</a>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<a class="dropdown-item" href="#">준비중</a>
-			</div>
-		</div>
-		<div class="dropdown d-inline">
-			<a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Voice</a>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<input placeholder="성우 검색" class="VAinput dropdown-item bg-dark text-white form-control form-control-sm col-10 mx-auto p-1" type="text">
-				<div class="dropdown-divider"></div>
-				<div class="VoC"></div>
-			</div>
-		</div>
-		<div class="dropdown d-inline">
-			<a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Artist</a>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<a class="dropdown-item" href="#">준비중</a>
-			</div>
+	<div class="dropdown mr-2">
+		<a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Type</a>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+			<a class="dropdown-item" href="#">HG</a>
+			<a class="dropdown-item" href="#">SMG</a>
+			<a class="dropdown-item" href="#">AR</a>
+			<a class="dropdown-item" href="#">RF</a>
+			<a class="dropdown-item" href="#">MG</a>
+			<a class="dropdown-item" href="#">SG</a>
 		</div>
 	</div>
-	<div class="d-none justify-content-center text-center">
-		<div class="dropdown">
-			<a class="btn btn-warning btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">정렬</a>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-				<a class="dropdown-item" href="#">도감순</a>
-				<a class="dropdown-item" href="#">등급</a>
-				<a class="dropdown-item" href="#">제조시간</a>
-				<a class="dropdown-item" href="#">타입</a>
-			</div>
+	<div class="dropdown mr-2">
+		<a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tile</a>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+			<a class="dropdown-item" href="#">준비중</a>
+		</div>
+	</div>
+	<div class="dropdown mr-2">
+		<a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Voice</a>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+			<input placeholder="성우 검색" class="VAinput dropdown-item bg-dark text-white form-control form-control-sm col-10 mx-auto p-1" type="text">
+			<div class="dropdown-divider"></div>
+			<div class="VoC"></div>
+		</div>
+	</div>
+	<div class="dropdown mr-2">
+		<a class="btn btn-info btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Artist</a>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+			<a class="dropdown-item" href="#">준비중</a>
+		</div>
+	</div>
+	<div class="dropdown mr-2">
+		<a class="btn btn-warning btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort</a>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+			<a class="dropdown-item" href="#">Index No</a>
+			<a class="dropdown-item" href="#">Rarity</a>
+			<a class="dropdown-item" href="#">Build Time</a>
+			<a class="dropdown-item" href="#">Type</a>
 		</div>
 	</div>
 </div>

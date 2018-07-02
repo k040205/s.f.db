@@ -32,19 +32,17 @@ function loadComplete(){
 	loader.removeClass("is-active");
 	$('#search').quicksearch('.item',{
 		noResults:"#noResultMessage",
-		'bind':'keyup keydown click change blur focus',
+		'bind':'keyup change',
 		'hide':function(){$(this).removeClass('muuri-item-shown');filter('.muuri-item-shown')},
 		'show':function(){$(this).addClass('muuri-item-shown');filter('.muuri-item-shown')}
 	});
 	$('.VAinput').quicksearch('.VA',{
-		'bind':'keyup keydown click change blur focus',
+		'bind':'keyup change',
 		'hide':function(){$(this).addClass('d-none')},
 		'show':function(){$(this).removeClass('d-none')}
 	});
-	$("button.flex-fill:nth-child(1)").click(()=>{$(".justify-content-center:nth-child(3)").toggleClass("d-none"),$(".justify-content-center:nth-child(4)").addClass("d-none")});
-	$("button.flex-fill:nth-child(2)").click(()=>{$(".justify-content-center:nth-child(4)").toggleClass("d-none"),$(".justify-content-center:nth-child(3)").addClass("d-none")});
 	$(".item-content").click(function(){
-		$(".grid,#search,#func").toggleClass('d-none'),$("body>div:nth-child(2)").toggleClass("d-md-flex"),$("body>div:nth-child(3)").toggleClass("d-flex");
+		$(".grid,#search,#func").toggleClass('d-none'),$("#filter").toggleClass("d-flex d-none");
 		var clicked=$(this).children(".no").attr("data-no");
 		$.each(dollData,(index,doll)=>{
 			if(doll.id==clicked){
@@ -277,8 +275,7 @@ function Skill(y,x){
 };
 function togglecon(){
 	$(".grid,#search,#func").toggleClass('d-none');
-	$("body>div:nth-child(2)").toggleClass("d-md-flex");
-	$("body>div:nth-child(3)").toggleClass("d-flex");
+	$("#filter").toggleClass("d-flex d-none");
 	$("button.btn-warning").remove();
 	$(".img-fluid").attr("src","");
 	$("#drop").removeAttr("data-content");
@@ -287,7 +284,7 @@ function togglecon(){
 };
 VoActor.forEach(VAfltr);
 $(".filter,.dropdown-menu>a").click(function(){
-	var filtr=$(this).text();
+	var filtr=$(this).text(),t0=$('[data-time="00"]');
 	filtr=="2성"?filter('[data-rarity="2"]'):
 	filtr=="3성"?filter('[data-rarity="3"]'):
 	filtr=="4성"?filter('[data-rarity="4"]'):
@@ -310,10 +307,10 @@ $(".filter,.dropdown-menu>a").click(function(){
 	*/
 	filtr=="All"&&filter('[data-type]');
 	//정렬
-	filtr=="도감순"?new Muuri('.grid',{sordData:null}):
-	filtr=="등급"?sort("rarity"):
-	filtr=="제조시간"?sort("time"):
-	filtr=="타입"&&sort("type");
+	filtr=="Index No"?(t0.addClass('muuri-item-shown'),filter('.muuri-item-shown'),new Muuri('.grid',{sordData:null})):
+	filtr=="Rarity"?(t0.addClass('muuri-item-shown'),filter('.muuri-item-shown'),sort("rarity")):
+	filtr=="Build Time"?(t0.removeClass('muuri-item-shown'),filter('.muuri-item-shown'),sort("time")):
+	filtr=="Type"&&(t0.addClass('muuri-item-shown'),filter('.muuri-item-shown'),sort("type"));
 });
 $(".VA").click(function(){
 	var voice=$(this).find("span:nth-child(1)").text();
