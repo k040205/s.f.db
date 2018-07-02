@@ -32,12 +32,12 @@ function loadComplete(){
 	loader.removeClass("is-active");
 	$('#search').quicksearch('.item',{
 		noResults:"#noResultMessage",
-		'bind':'keyup change',
+		'bind':'click input',
 		'hide':function(){$(this).removeClass('muuri-item-shown');filter('.muuri-item-shown')},
 		'show':function(){$(this).addClass('muuri-item-shown');filter('.muuri-item-shown')}
 	});
 	$('.VAinput').quicksearch('.VA',{
-		'bind':'keyup change',
+		'bind':'click input',
 		'hide':function(){$(this).addClass('d-none')},
 		'show':function(){$(this).removeClass('d-none')}
 	});
