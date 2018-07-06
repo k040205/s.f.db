@@ -318,8 +318,7 @@ $(".VA").click(function(){
 });
 $("#CV,#illust").click(function(){
 	var ClickText=$(this).text();
-	togglecon();
-	Sval(ClickText);
+	rCh.destroy(),togglecon(),Sval(ClickText);
 });
 function cho_hangul(str){
 	var cho=["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
