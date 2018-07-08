@@ -4,6 +4,8 @@
 
 ## Note
 - We're looking for translators. [EN,JP,CN and others]
+- [Join and Please call Ergo9ine](https://discordapp.com/invite/8eTFTSa) 
+- If you don't want to participate, please PR.
 
 ## Process
 - [trello](https://trello.com/b/sPsg0jzu/gfdb-process)
