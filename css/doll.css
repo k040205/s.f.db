@@ -8,6 +8,8 @@
 	margin:14.5px 12.5px
 }
 #filter{flex-wrap:wrap}
+.Target .CC{background-color:#00ffff}
+.Self .CC{background-color:#fff}
 .aqua{background-color:#00ffff}
 .grey{background-color:#9e9e9e}
 #sdc,#chart,#stat,#sec-fir,#sec-sec,#doll,#equip,#dolltext,#dolllore{outline:1px solid grey}
