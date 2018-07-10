@@ -3,7 +3,7 @@
 「SANGVIS FERRI DATABASE (Girls' FrontLine Database Project)」 is licensed under the MIT License
 
 ## Note
-- We're looking for translators. [EN,JP,CN and others]
+- We're Find a translators. [EN,JP,CN and others]
 - [Join and Please call Ergo9ine](https://discordapp.com/invite/8eTFTSa) 
 - If you don't want to participate, please PR.
 
