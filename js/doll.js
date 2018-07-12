@@ -25,7 +25,8 @@ function contentsload(){
 };
 function loadComplete(){
 	grid=new Muuri("#grid",{
-		showDuration:null,hideDuration:null,layoutDuration:null,showEasing:null,hideEasing:null,layoutEasing:null,visibleStyles:null,hiddenStyles:null,
+		showDuration:null,hideDuration:null,layoutDuration:null,showEasing:null,hideEasing:null,layoutEasing:null,
+		visibleStyles:{},hiddenStyles:{},
 		sortData:{
 			time:(item,element)=>element.getAttribute('data-time'),
 			type:(item,element)=>element.getAttribute('data-type').toUpperCase(),
@@ -79,15 +80,15 @@ function loadComplete(){
 				SKB();
 				Skill(doll.id,doll.skill);
 				rCh=new Chart(ctx,{type:'radar',data:statisticschart,options:chartOptions});
-				rCh.update();
+				rCh.update()
 			}
 		})
 	});
 	$(".btn-dark:nth-child(5)").click(()=>{$("#contents>div:nth-child(6)").toggleClass("d-none d-block")});
-	$(".xfunc").click(()=>{rCh.destroy(),togglecon()})
+	$(".xfunc").click(()=>{togglecon()})
 };
 function VAfltr(a){
-	var b=cho_hangul(a)
+	var b=cho_hangul(a);
 	$(".VoC").append(`<a class="dropdown-item VA" href="#"><span>${a}</span><span class="d-none">${b}/</span></a>`)
 };
 function Artfltr(a){
@@ -125,12 +126,13 @@ function chrtset(x,y){
 			n==18?a=`10`:
 			n==20&&(a=`${x.ammo}`);
 			$(`#table>div:nth-child(${n})`).html(a);
-			if ($("#table>div:nth-child(20)").text()=="undefined"){$("#table>div:nth-child(20)").text("")};
-			if (Array.isArray(x.drop)==true){$("#table>div:nth-child(4)>.btn-group>button:nth-child(3)").removeAttr("disabled").addClass("text-white")};
-		}}
+			if($("#table>div:nth-child(20)").text()=="undefined"){$("#table>div:nth-child(20)").text("")};
+			if(Array.isArray(x.drop)==true){$("#table>div:nth-child(4)>.btn-group>button:nth-child(3)").removeAttr("disabled").addClass("text-white")}
+		}
+	};
 	function Set1(z){y.labels=["체력","화력","회피","사속","명중"];y.datasets[0].data=[x.hp[z],x.dmg[z],x.dodge[z],x.FR[z],x.hit[z]]};
 	function Set2(a,b,c,d){y.datasets[1].label=a+"평균";y.datasets[1].data=b;D=D.replace("C",c).replace("M",d)};
-	$("#sec-fir>div:nth-child(2)>div:nth-child(2)").html(D);
+	$("#sec-fir>div:nth-child(2)>div:nth-child(2)").html(D)
 };
 function fxts(x){
 	var TS="타일 위 타겟에게";
@@ -151,17 +153,17 @@ function fxts(x){
 		"armor"==index&&(TS+=`<br>장갑 ${value}%증가`);
 	});
 	function Set(x){TS=TS.replace("타겟",x)};
-	$("#sec-fir>div:nth-child(1)>div:nth-child(2)>div:nth-child(2)").html(TS);
+	$("#sec-fir>div:nth-child(1)>div:nth-child(2)>div:nth-child(2)").html(TS)
 };
 function SKB(){
 	$(".skinntg>button,#contents>div:nth-child(6)>button").click(function(){
 		var imgtag=$(".col-lg-5:nth-child(1)>img"),iX=$(this).index(),No=$(".blockquote-footer>cite:nth-child(1)").text(),Isrc=idir+No+'.png';
 		if(0==iX){var imgsrc=imgtag.attr("src").split(idir)[1].split(".png")[0],imgM=imgsrc.indexOf("_d"),imgT=imgsrc.slice(0,-2);-1!=imgM?(imgtag.attr("src",idir+imgT+".png")):(imgtag.attr("src",idir+imgsrc+"_d.png"))}
 		else{1==iX?imgtag.attr("src",Isrc):(--iX,Isrc=idir+No+"_"+iX+".png",imgtag.attr("src",Isrc))};
-	});
+	})
 };
 function Skill(y,x){
-	var src=x.src,dmg=x.Fx.dmg,dmg1=x.Fx.dmg1,dmg2=x.Fx.dmg2,dmg3=x.Fx.dmg3,armor=x.Fx.armor,dodge=x.Fx.dodge,hit=x.Fx.hit,FR=x.Fx.FR,cri=x.Fx.cri,time=x.Fx.time,MS=x.Fx.MS,Sdesc="";
+	var src=x.src,dmg=x.Fx.dmg,dmg1=x.Fx.dmg1,dmg2=x.Fx.dmg2,dmg3=x.Fx.dmg3,ammo=x.Fx.ammo,armor=x.Fx.armor,dodge=x.Fx.dodge,hit=x.Fx.hit,FR=x.Fx.FR,cri=x.Fx.cri,time=x.Fx.time,MS=x.Fx.MS,Sdesc="";
 	function sniper(time,target){Sdesc=`${time}초간 조준 후, ${target}에게 공격력의 ${dmg[1]/10}배의 피해를 입힌다.`};
 	function c81(a){Sdesc=`${a} 화력을 ${dmg[1]}% 상승시킨다.`};
 	function rep(a,b){Sdesc=Sdesc.replace(a,b)};
@@ -188,21 +190,21 @@ function Skill(y,x){
 	src==13?Sdesc=`적을 향해 필살기를 사용하여 일정 범위 내의 적들에게 공격력의 ${dmg[1]/10}배의 대미지를 총 8회 입힌다`:
 	src==15?Sdesc=`블랙홀을 발생시키는 수류탄을 던져 ${time[1]}초 동안 반경 2.5 범위 내의 적을 끌어당기고 중심에서 1.5 범위 내의 적들에게 초당 공격력의 ${dmg[1]}%의 피해를 준다.`:
 	src==17?Sdesc=`스킬 발동 시 제대에 배속된 RF 1기마다(편제무관) 자신의 치명률과 사속 ${FR[1]}%씩 상승. ${time[1]}초 지속 【패시브 : 공격 시 40%의 확률로 2초 동안 같은 열에 있는 모든 아군의 치명률과 사속 ${cri[1]}% 상승(최대 3회 중첩)】`:
-	src==18?Sdesc=`발동 시 ${dmg1[1]}개의 각인을 새긴다. 【패시브 : 공격 시 ${cri[1]}% 확률로 각인을 ${x.Fx.ammo[1]}개씩 새긴다. 18개 도달 시 다음 공격으로 엘리트 적에게 공격력의 ${dmg2[1]*10}%(통상 적에게 ${dmg3[1]*10}%)의 피해를 입히며 각인 수는 리셋된다.】`:
+	src==18?Sdesc=`발동 시 ${dmg1[1]}개의 각인을 새긴다. 【패시브 : 공격 시 ${cri[1]}% 확률로 각인을 ${ammo[1]}개씩 새긴다. 18개 도달 시 다음 공격으로 엘리트 적에게 공격력의 ${dmg2[1]*10}%(통상 적에게 ${dmg3[1]*10}%)의 피해를 입히며 각인 수는 리셋된다.】`:
 	src==19?Sdesc=`스킬을 발동할 때마다 다른 효과를 가진 탄환으로 교체 : <color=#91c1f0>아음속탄</color>(기본) : 회피 ${dodge[1]}% 상승 / <color=#db3d3d>ST탄</color> : 화력 ${dmg[1]}% 상승 / <color=#ffb400>일반탄</color> : 명중 ${hit[1]}% 상승`:
 	src==21?Sdesc=`공격을 멈추고 다섯 차례 연주한다 매 연주는 무작위 아군 하나의 화력과 명중을 ${dmg1[1]}%(Glory Light 장착시 ${dmg2[1]}%) 상승시킨다<br>중첩 불가<br>연주당 지속시간 각 3초.`:
 	src==22?Sdesc=`투척용 도끼를 던져 타깃에게 공격력의 ${dmg[1]}배의 피해를 입힌다.`:
 	src==23?Sdesc=
-		y==79||y==185?`야간작전에서 ${time[1]}초 동안 자신의 화력을 ${x.FxNight.dmg[1]}%(주간 보정치 : ${dmg[1]}%) 상승시키며 사격 중 장탄수를 ${x.Fx.ammo[1]}발 추가한다.`:
+		y==79||y==185?`야간작전에서 ${time[1]}초 동안 자신의 화력을 ${x.FxNight.dmg[1]}%(주간 보정치 : ${dmg[1]}%) 상승시키며 사격 중 장탄수를 ${ammo[1]}발 추가한다.`:
 		y==80||y==81||y==110||y==121?`자신의 명중을 ${hit[1]}% 상승시키며 지속시간 동안 모든 공격이 치명타로 적용된다.`:
 		y==77||y==85||y==109?`패시브 스킬 <br> 매 3회 공격 시 그 다음 공격은 타깃에게 ${dmg[1]/10}배의 피해를 입힌다.`:
 		y==112?`재장전 할 때 마다 25초간 자신의 화력이 ${dmg[1]}% 상승하는 버프를 받는다 (각 버프는 중첩가능)`:
-		y==163||y==164||y==165?`스크립트 준비중`:
+		y==163?`장탄수를 ${ammo[1]}발 사속을 ${FR[1]}% 상승시키며 공격이 적을 밀어낼 확률이 ${x.Fx.KB[1]}%로 상승하지만 화력이 ${dmg[1]}% 감소한다.`:
 		y==173?`매 공격시 ${cri[1]}%의 확률로 반드시 치명상을 입히는 탄환 한 발을 발사한다.`:
-		y==189?`${time[1]}초 동안 사속이 ${FR[1]}% 상승하며 장탄수가 ${x.Fx.ammo[1]}발 증가한다. 단 다음 탄창 교체에 걸리는 시간이 1초 증가한다.`:
+		y==189?`${time[1]}초 동안 사속이 ${FR[1]}% 상승하며 장탄수가 ${ammo[1]}발 증가한다. 단 다음 탄창 교체에 걸리는 시간이 1초 증가한다.`:
 		y==203?`패시브 효과 : ${dmg[1]}초마다 적에게 표식 1개를 새긴다. (중첩 가능)<br>액티브 효과 : 스킬 발동 후 일반 사격 시 표식이 남겨진 목표에게 추가타가 발생하며 표식을 1개 소모한다. 액티브 효과는 최대 ${time[1]}초 혹은 표식이 전부 소모될 때까지 지속된다.`:
-		y==208?`자신의 화력을 ${dmg[1]}% 명중을 ${hit[1]}% 상승시키고 장탄수가 ${x.Fx.ammo[1]}발 추가되며 난사 모드로 진입하여 매 공격 시 타깃을 변경한다. 단 자신의 이동속도가 50% 감소한다.`:
-		`${time[1]}초 동안 자신의 화력을 ${dmg[1]}% 상승시키며 사격 중 장탄수를 ${x.Fx.ammo[1]}발 추가한다.`:
+		y==208?`자신의 화력을 ${dmg[1]}% 명중을 ${hit[1]}% 상승시키고 장탄수가 ${ammo[1]}발 추가되며 난사 모드로 진입하여 매 공격 시 타깃을 변경한다. 단 자신의 이동속도가 50% 감소한다.`:
+		`${time[1]}초 동안 자신의 화력을 ${dmg[1]}% 상승시키며 사격 중 장탄수를 ${ammo[1]}발 추가한다.`:
 	src==26?Sdesc=`아군 전체 화력을 ${dmg[1]}%, 치명타율을 ${cri[1]}% 상승시킨다.`:
 	src==27?Sdesc=`자신의 화력과 치명타율을 각각 ${dmg[1]}% 씩 상승시킨다.`:
 	src==30?Sdesc=
@@ -228,7 +230,7 @@ function Skill(y,x){
 	src==57?Sdesc=`소이탄을 투척하여 반경 1.5범위 내의 적들에게 공격력의 ${dmg1[1]/10}배의 폭발 대미지와 함께 ${time[1]}초 동안 0.33초당 공격력의 ${dmg2[1]/10}배의 화상 도트 대미지를 지속적으로 입힌다.`:
 	src==60?Sdesc=`야간작전에서 자신의 화력을 ${x.FxNight.dmg[1]}%(주간 보정치 없음) 명중을 ${hit[1]}%(주간 보정치 : ${hit[1]}%) 상승시키며 지속시간 동안 모든 공격이 치명타로 적용된다.`:
 	src==61?Sdesc=`야간작전에서 아군 전체 회피를 ${x.FxNight.dodge[1]}% 상승시킨다. (주간 보정치 : ${dodge[1]}%)`:
-	src==63?Sdesc=`야간작전에서 적군 전체 회피를 ${x.Fx.dodge[1]}% 감소시킨다. (주간 보정치 : ${dodge[1]}%)`:
+	src==63?Sdesc=`야간작전에서 적군 전체 회피를 ${x.FxNight.dodge[1]}% 감소시킨다. (주간 보정치 : ${dodge[1]}%)`:
 	src==67?Sdesc=`야간작전에서 자신의 화력을 ${x.FxNight.dmg[1]}% 상승시킨다. (주간 보정치 : ${dmg[1]}%)`:
 	src==68?Sdesc=`주간전에서 화력이 ${dmg[1]}% 치명률이 ${cri[1]}% 상승하며 야간전일 경우 명중이 ${x.FxNight.hit[1]}% 사속이 ${x.FxNight.FR[1]}% 상승한다.`:
 	src==69?Sdesc=`(야간)적군 전체 화력을 ${dmg[1]}(${x.FxNight.dmg[1]})% 하락시킨다.`:
@@ -268,7 +270,7 @@ function Skill(y,x){
 		`유탄을 발사하여 반경 1.5범위 내의 적들에게 공격력의 ${dmg[1]}배의 피해를 입힌다.`:
 	src==94?Sdesc=`스킬 발동 후 공격의 마지막 탄환이 적에게 공격력의 ${dmg[1]}%의 대미지를 입히고 자신의 탄창을 즉시 장전한다.`:
 	src==95?Sdesc=
-		y==164?`스크립트 준비중`:
+		y==164?`자신이 위치한 열에 무작위로 방패를 2개 설치하여 작은 범위에 ${dmg[1]}% 피해를 주고 밀어낸다. 방패가 설치된 칸에 있는 아군은 받는 피해가 ${armor[1]}% 감소한다.`:
 		`전투 중 전열에 존재하는 아군측 인형에게 ${armor[1]}의 피해를 흡수하는 실드를 부여한다.`:
 	src==96?Sdesc=
 		y==160?`다음 3회의 공격을 점차 강화 하여 각각 타깃에게 자신의 공격력의 ${dmg1[1]}/${dmg2[1]}/${dmg3[1]}배의 피해를 입힌다.`:
@@ -286,12 +288,14 @@ function Skill(y,x){
 	$("#sec-fir>div:nth-child(3)>div:nth-child(2)>div").html(Sdesc);
 };
 function togglecon(){
+	rCh.destroy();
 	$(".grid,#search,#func").toggleClass("d-none");
 	$("#filter").toggleClass("d-flex d-none");
 	$("button.btn-warning").remove();
 	$(".img-fluid").attr("src","");
 	$("#drop").removeAttr("data-content");
 	$('[data-toggle="popover"]').popover("hide");
+	$(".skinntg>button").off("click")
 };
 $(".filter,.dropdown-menu>a").click(function(){
 	var filtr=$(this).text(),t0=$('[data-time="00"]');
@@ -333,7 +337,7 @@ $(".tileFilter").on('shown.bs.popover',()=>{
 $(".tileFilter").on('hide.bs.popover',()=>{$(".Target>div>div>div,.Self>div>div>div").off("click");for(var n=1;n<10;n++){$(`#gridT${n},#gridS${n}`).removeClass("CC")}});
 VoActor.forEach(VAfltr),$(".VA").click(function(){Sval(VA[VoActor.indexOf($(this).find("span:nth-child(1)").text())])});
 Illustrator.forEach(Artfltr),$(".Illustrator").click(function(){Sval(Illustrator[Illustrator.indexOf($(this).find("span:nth-child(1)").text())])});
-$("#CV,#illust").click(function(){togglecon(),rCh.destroy(),Sval($(this).text())});
+$("#CV,#illust").click(function(){togglecon(),Sval($(this).text())});
 function cho_hangul(str){
 	var cho=["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
 	var result="",i,code;

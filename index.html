@@ -1,7 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="keywords" content="소녀전선,소전,girlsfrontline,db,디비,데이터베이스"><meta name="description" content="Wellcome to SANGVIS FERRI Database">
-<meta property="og:site_name" content="SANGVIS FERRI DATABASE"><meta property="og:type" content="website"><meta property="og:title" content="SANGVIS FERRI DATABASE"><meta property="og:description" content="Wellcome to SANGVIS FERRI Database Index Page"><meta property="og:image" content="https://sf2031.com/img/html/og_icon.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="500"><meta property="og:image:height" content="500">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://sf2031.com"><meta name="twitter:title" content="SANGVIS FERRI DATABASE"><meta name="twitter:description" content="Wellcome to SANGVIS FERRI Database Index Page"><meta name="twiiter:image" content="https://sf2031.com/img/html/og_icon.png">
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="keywords" content="소녀전선,소전,GLF,girls'frontline,db,database,디비,데이터베이스"><meta name="description" content="Wellcome to SANGVIS FERRI Database"><meta property="og:site_name" content="SANGVIS FERRI DATABASE"><meta property="og:type" content="website"><meta property="og:title" content="SANGVIS FERRI DATABASE"><meta property="og:description" content="Wellcome to SANGVIS FERRI Database Index Page"><meta property="og:image" content="https://sf2031.com/img/html/og_icon.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="500"><meta property="og:image:height" content="500"><meta name="twitter:card" content="summary"><meta name="twitter:url" content="https://sf2031.com"><meta name="twitter:title" content="SANGVIS FERRI DATABASE"><meta name="twitter:description" content="Wellcome to SANGVIS FERRI Database"><meta name="twiiter:image" content="https://sf2031.com/img/html/og_icon.png">
 <link rel="icon" sizes="128x128" type="image/png" href="favicon.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.1/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/css_overwrite.css">
@@ -25,6 +22,7 @@
 <button class="m4 btn btn-dark btn-sm tab d-none sm">Disk Calculator</button>
 <button class="m5 btn btn-dark btn-sm tab d-none sm">Battery Calculator</button>
 <button class="m6 btn btn-dark btn-sm tab d-none sm">Powerup Simulator</button>
+<button class="m7 btn btn-dark btn-sm tab d-none sm">SD Simulator</button>
 </div>
 <div id="lm" class="d-flex flex-column bg-dark text-white text-center invisible" style="z-index:16"><!-- 모바일 -->
 <button id="lc" class="btn close text-white border-bottom rounded-0">×</button>
@@ -42,6 +40,7 @@
 <button class="m4 btn btn-dark tab d-none sm">Disk Calculator</button>
 <button class="m5 btn btn-dark tab d-none sm">Battery Calculator</button>
 <button class="m6 btn btn-dark tab d-none sm">Powerup Simulator</button>
+<!-- <button class="m7 btn btn-dark tab d-none sm">SD Simulator</button> -->
 </div>
 <div class="text-center bg-dark text-white d-md-none clearfix">
 <button id="lo" class="btn btn-dark btn-sm float-left">LeftMenu</button>
@@ -55,9 +54,7 @@
 <div class="row my-3">
 <div class="col-lg-6">
 <i class="nt"><div class="text-white ntl">Notice</div></i>
-<div class="border rounded my-3 p-3">
-Contributing/Bug report/Suggestions<br/>Please PR to <a href="https://github.com/ergo9ine/s.f.db">Github</a> OR Join to <a href="https://discord.gg/JKk9JcH">Discord</a><br/><br/>SFDB is do not working IE. Please using other browser<br/><strong>Desktop resolution 1920x1080 basework</strong>
-</div>
+<div class="border rounded my-3 p-3">Contributing/Bug report/Suggestions<br/>Please PR to <a href="https://github.com/ergo9ine/s.f.db">Github</a> OR Join to <a href="https://discord.gg/JKk9JcH">Discord</a><br/><br/>SFDB is do not working IE. Please using other browser<br/><strong>Desktop resolution 1920x1080 basework</strong></div>
 </div>
 <div class="col-lg-6">
 <div class="col-7 p-0" style="width:205px"><i class="nt"><div class="text-white ntl">Event</div></i></div>
@@ -118,7 +115,7 @@ Contributing/Bug report/Suggestions<br/>Please PR to <a href="https://github.com
 </div>
 </div>
 <div id="tab5" class="content bg-dark text-white d-none row m-0">
-<nav class="col-12 h-10 navbar navbar-dark bg-warning text-dark">
+<nav class="col-12 navbar navbar-dark bg-warning text-dark">
 <div class="container">
 <a class="navbar-brand">숙소 전지 계산기</a>
 <p>사용 시 주의사항</p><p>* 숙소 미 개방 시, 숙소 안락도를 꼭 지워 주세요!</p><p>** 오차가 존재할 수 있습니다.</p>
@@ -248,7 +245,7 @@ Contributing/Bug report/Suggestions<br/>Please PR to <a href="https://github.com
 </div>
 <div class="col-lg-6 bg-dark text-white"><table id="result" class="border table"></table></div>
 </div>
-<div id="tab7" class="content d-none"><h1>제조 시뮬레이터</h1><p>Test Page</p></div>
+<div id="tab7" class="content d-none"><iframe data-src="gf-spine-simulator/index.html" style="height:100%;width:1px;min-width:100%;border:0;display:block" width="100%"></iframe></div>
 </div>
 <!-- <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3,npm/vanilla-lazyload@10,npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
