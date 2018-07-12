@@ -25,29 +25,30 @@ function contentsload(){
 };
 function loadComplete(){
 	grid=new Muuri("#grid",{
-		showDuration:0,hideDuration:0,layoutDuration:0,
+		showDuration:null,hideDuration:null,layoutDuration:null,showEasing:null,hideEasing:null,layoutEasing:null,visibleStyles:null,hiddenStyles:null,
 		sortData:{
 			time:(item,element)=>element.getAttribute('data-time'),
 			type:(item,element)=>element.getAttribute('data-type').toUpperCase(),
 			rarity:(item,element)=>element.getAttribute('data-rarity')
-		},layout:{fillGaps:true}
+		}
 	});
 	loader.removeClass("is-active");
 	$("#search").quicksearch(".item",{
 		noResults:"#noResultMessage",
 		'bind':'click input',
-		'hide':function(){$(this).removeClass('muuri-item-shown');filter(".muuri-item-shown")},
-		'show':function(){$(this).addClass('muuri-item-shown');filter(".muuri-item-shown")}
+		'hide':function(){this.classList.remove("muuri-item-shown")},
+		'show':function(){this.classList.add("muuri-item-shown")},
+		'onAfter':()=>{filter(".muuri-item-shown")}
 	});
 	$(".VAinput").quicksearch(".VA",{
-		'bind':'click input',
-		'hide':function(){$(this).addClass("d-none")},
-		'show':function(){$(this).removeClass("d-none")}
+		'bind':'input',
+		'hide':function(){this.classList.add("d-none")},
+		'show':function(){this.classList.remove("d-none")}
 	});
 	$(".Artinput").quicksearch(".Illustrator",{
-		'bind':'click input',
-		'hide':function(){$(this).addClass("d-none")},
-		'show':function(){$(this).removeClass("d-none")}
+		'bind':'input',
+		'hide':function(){this.classList.add("d-none")},
+		'show':function(){this.classList.remove("d-none")}
 	});
 	$(".item-content").click(function(){
 		$(".grid,#search,#func").toggleClass("d-none"),$("#filter").toggleClass("d-flex d-none"),$(".tileFilter").popover('hide');
@@ -324,16 +325,15 @@ $(".filter,.dropdown-menu>a").click(function(){
 $(".tileFilter").on('shown.bs.popover',()=>{
 	$("#tileFilter").remove();
 	$(".Target>div>div>div,.Self>div>div>div").click(function(){
-		var tis=$(this);
-		tis.toggleClass("CC grey");
-		for(var n=1;n<10;n++){if($(`#gridT${n}`).hasClass("CC")==1){dollT[n-1]=1}}
+		this.classList.toggle("CC");
+		for(var n=1;n<10;n++){if($(`#gridT${n}`).hasClass("CC")==1){dollT[n-1]=1}else(dollT[n-1]=0);if($(`#gridS${n}`).hasClass("CC")==1){dollT[n-1]=2}}
 		Sval(dollT.toString())
 	})
 });
-$(".tileFilter").on('hide.bs.popover',()=>{$(".Target>div>div>div,.Self>div>div>div").off("click")});
+$(".tileFilter").on('hide.bs.popover',()=>{$(".Target>div>div>div,.Self>div>div>div").off("click");for(var n=1;n<10;n++){$(`#gridT${n},#gridS${n}`).removeClass("CC")}});
 VoActor.forEach(VAfltr),$(".VA").click(function(){Sval(VA[VoActor.indexOf($(this).find("span:nth-child(1)").text())])});
 Illustrator.forEach(Artfltr),$(".Illustrator").click(function(){Sval(Illustrator[Illustrator.indexOf($(this).find("span:nth-child(1)").text())])});
-$("#CV,#illust").click(function(){togglecon(),Sval($(this).text())});
+$("#CV,#illust").click(function(){togglecon(),rCh.destroy(),Sval($(this).text())});
 function cho_hangul(str){
 	var cho=["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
 	var result="",i,code;
