@@ -282,7 +282,7 @@ function Skill(y,x){
 	src==109&&(Sdesc=`스킬 지속시간 동안 쌍총으로 공격하여 2회의 피해를 입히며 반드시 치명타가 됩니다.`);
 	Sdesc=y==5||y==11||y==47||y==174||y==200||y==20005?Sdesc+`<br>지속시간${x.FxNight.time[1]}초(주간 보정치 : ${time[1]}초)/선쿨${x.FCD}초/쿨타임${x.CD[1]}초`:
 	src==94||y==77||y==85||y==109||y==173?Sdesc+``:
-	src==0||src==1||src==13||src==22||src==37||src==39||src==39||src==41||src==57||src==91||src==94||src==96||y==79||y==102||y==185||y==213||y==1004||y==1005||y==1006||y==1009||y==1010?Sdesc+`<br>선쿨${x.FCD}초/쿨타임${x.CD[1]}초`:
+	src==0||src==1||src==13||src==22||src==37||src==39||src==39||src==41||src==57||src==91||src==94||src==96||y==79||y==102||y==185||y==198||y==213||y==1004||y==1005||y==1006||y==1009||y==1010?Sdesc+`<br>선쿨${x.FCD}초/쿨타임${x.CD[1]}초`:
 	Sdesc+`<br>지속시간${time[1]}초/선쿨${x.FCD}초/쿨타임${x.CD[1]}초`;
 	y==148||y==183&&(Sdesc=Sdesc.replace(`<br>`,`<br>지속시간${time[1]}초.`));
 	$("#sec-fir>div:nth-child(3)>div:nth-child(2)>div").html(Sdesc);
