@@ -329,7 +329,7 @@ $(".tileFilter").on('shown.bs.popover',()=>{
 	$("#tileFilter").remove();
 	$(".Target>div>div>div,.Self>div>div>div").click(function(){
 		this.classList.toggle("CC");
-		for(var n=1;n<10;n++){if($(`#gridT${n}`).hasClass("CC")==1){dollT[n-1]=1}else(dollT[n-1]=0);if($(`#gridS${n}`).hasClass("CC")==1){dollT[n-1]=2}}
+		for(var n=1;n<10;n++){if($(`#gridT${n}`).hasClass("CC")==1){dollT[n-1]=1}else(dollT[n-1]=0);if($(`#gridS${n}`).hasClass("CC")==1){dollT[n-1]=2}};
 		Sval(dollT.toString())
 	})
 });
@@ -338,9 +338,9 @@ VoActor.forEach(VAfltr),$(".VA").click(function(){Sval(VA[VoActor.indexOf($(this
 Illustrator.forEach(Artfltr),$(".Illustrator").click(function(){Sval(Illustrator[Illustrator.indexOf($(this).find("span:nth-child(1)").text())])});
 $("#CV,#illust").click(function(){togglecon(),Sval($(this).text())});
 function cho_hangul(str){
-	var cho=["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"];
-	var result="",i,code;
-	for(i=0;i<str.length;i++){
+	var cho=["ㄱ","ㄲ","ㄴ","ㄷ","ㄸ","ㄹ","ㅁ","ㅂ","ㅃ","ㅅ","ㅆ","ㅇ","ㅈ","ㅉ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"],
+			result="",i,code,strleng=str.length;
+	for(i=0;i<strleng;i++){
 		code=str.charCodeAt(i)-44032;
 		if(code>-1&&code<11172)result+=cho[Math.floor(code/588)];
 	}
