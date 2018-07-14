@@ -37,9 +37,8 @@ function loadComplete(){
 	$("#search").quicksearch(".item",{
 		noResults:"#noResultMessage",
 		'bind':'click input',
-		'hide':function(){this.classList.remove("muuri-item-shown")},
-		'show':function(){this.classList.add("muuri-item-shown")},
-		'onAfter':()=>{filter(".muuri-item-shown")}
+		'hide':function(){grid.hide([this])},
+		'show':function(){grid.show([this])}
 	});
 	$(".VAinput").quicksearch(".VA",{
 		'bind':'input',
