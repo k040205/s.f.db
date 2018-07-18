@@ -342,7 +342,7 @@ function cho_hangul(str){
 			result="",i,code,strleng=str.length;
 	for(i=0;i<strleng;i++){
 		code=str.charCodeAt(i)-44032;
-		if(code>-1&&code<11172)result+=cho[Math.floor(code/588)];
+		if(code>-1&&code<11172)result+=cho[Math.floor(code/588)]
 	}
 	return result
 }
