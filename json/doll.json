@@ -7034,6 +7034,40 @@
 "dmg1":[7,12],
 "dmg2":[10,15]
 }}},{
+"id":20001,
+"name":"M1873 Mod",
+"type":"hg",
+"rarity":5,
+"Mod":true,
+"hp":[82,82,83],
+"dmg":[36,37,37],
+"dodge":[78,79,80],
+"hit":[50,50,51],
+"FR":[50,50,50],
+"voice":"Eriko Matsui",
+"buildTime":0,
+"Fx":{
+"target":"all",
+"self":5,
+"tile":[2,4,6,8],
+"TileFx":{
+"FR":24,
+"hit":60
+}},
+"skill":{
+"src":97,
+"FCD":1,
+"CD":[15,12],
+"Fx":{
+"FR":[25,40],
+"MS":[30,50],
+"time":[2.5,4]
+}},
+"skill2":{
+"src":0,
+"Fx":{
+"dmg":[150,200]
+}}},{
 "id":20002,
 "name":"M1911 Mod",
 "type":"hg",
@@ -7055,13 +7089,12 @@
 "hit":50
 }},
 "skill":{
-"src":97,
-"FCD":1,
+"src":81,
+"FCD":6,
 "CD":[15,12],
 "Fx":{
-"FR":[25,40],
-"MS":[30,50],
-"time":[2.5,4]
+"dmg":[12,22],
+"time":[5,8]
 }},
 "skill2":{
 "src":0,
@@ -7138,6 +7171,40 @@
 "Fx":{
 "dmg":[10,20],
 "FR":[15,30]
+}}},{
+"id":20044,
+"name":"SV98 Mod",
+"type":"rf",
+"rarity":4,
+"Mod":true,
+"hp":[85,86,86],
+"dmg":[126,127,128],
+"dodge":[29,29,29],
+"hit":[74,80,81],
+"FR":[37,37,37],
+"illust":"幻象黑兔",
+"voice":"Mamiko Hanada",
+"buildTime":0,
+"Fx":{
+"target":"hg",
+"self":5,
+"tile":[9],
+"TileFx":{
+"time":15
+}},
+"skill":{
+"src":0,
+"target":"enemy_nearest",
+"FCD":10,
+"CD":[20,16],
+"Fx":{
+"dmg":[28,55]
+}},
+"skill2":{
+"src":82,
+"Fx":{
+"FR":[6,15],
+"time":[3,5]
 }}},{
 "id":20051,
 "name":"FN49 Mod",
@@ -7237,6 +7304,37 @@
 "skill2":{
 "src":7
 }},{
+"id":20063,
+"name":"G41 Mod",
+"type":"ar",
+"rarity":4,
+"Mod":true,
+"hp":[112,113,113],
+"dmg":[57,58,58],
+"dodge":[39,39,40],
+"hit":[54,54,55],
+"FR":[64,64,64],
+"illust":"PHI",
+"voice":"Kaori Yoshioka",
+"buildTime":0,
+"Fx":{
+"target":"smg",
+"self":5,
+"tile":[8],
+"TileFx":{
+"FR":25,
+"hit":55
+}},
+"skill":{
+"src":91,
+"FCD":8,
+"CD":[20,16],
+"Fx":{
+"dmg":[4,10]
+}},
+"skill2":{
+"src":7
+}},{
 "id":20075,
 "name":"M1918 Mod",
 "type":"mg",
@@ -7247,6 +7345,7 @@
 "hit":[33,34,34],
 "dodge":[33,34,34],
 "FR":[115,115,115],
+"ammo":8,
 "voice":"Yuuki Aoi",
 "buildTime":0,
 "Fx":{
@@ -7270,9 +7369,44 @@
 "Fx":{
 "dmg":[25,40],
 "re":[5.5,5]
+}}},{
+"id":20089,
+"name":"BrenMK Mod",
+"type":"mg",
+"rarity":4,
+"Mod":true,
+"hp":[176,177,178],
+"dmg":[96,96,97],
+"hit":[33,34,34],
+"dodge":[29,29,29],
+"FR":[103,103,103],
+"ammo":8,
+"illust":"废人",
+"voice":"Sora Amamiya",
+"buildTime":0,
+"Fx":{
+"target":"sg",
+"self":7,
+"tile":[3,9],
+"TileFx":{
+"FR":10,
+"hit":15
 }},
-"ammo":8
-},{
+"skill":{
+"src":23,
+"FCD":8,
+"CD":[18,18],
+"Fx":{
+"dmg":[18,30],
+"ammo":[1,4],
+"time":[6,8]
+}},
+"skill2":{
+"src":55,
+"Fx":{
+"dmg":[25,40],
+"re":[5.5,5]
+}}},{
 "id":20091,
 "name":"MP446 Mod",
 "type":"hg",
