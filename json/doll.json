@@ -1526,7 +1526,7 @@
 "voice":"Ai Kayano",
 "buildTime":17100,
 "drop":["8-4e"],
-"skins":["루돌프","무더위 속 임무"],
+"skins":["루돌프","무더위 속 임무","VIP 체험관"],
 "nick":["노태우","죽창이"],
 "Fx":{
 "target":"hg",
@@ -2782,7 +2782,7 @@
 "illust":"音符",
 "voice":"Aoi Koga",
 "buildTime":3900,
-"skins":["당번대표","축제 시작이야!"],
+"skins":["당번대표","축제 시작이야!","집안일 테스트"],
 "nick":["캘리코","미역"],
 "Fx":{
 "target":"all",
@@ -4306,7 +4306,7 @@
 "voice":"Nozomi Yamamoto",
 "buildTime":15600,
 "drop":["저체온증 1-4","저체온증 3-3","저체온증 3-4"],
-"skins":["트로피컬 스톰"],
+"skins":["트로피컬 스톰","맥주목장"],
 "nick":["시금치"],
 "Fx":{
 "target":"hg",
@@ -5471,7 +5471,7 @@
 "illust":"細重ソウジ",
 "voice":"Asami Seto",
 "buildTime":3720,
-"skins":["오페라의 유령"],
+"skins":["오페라의 유령","백화집사"],
 "nick":["로이"],
 "Fx":{
 "target":"all",
@@ -6082,6 +6082,7 @@
 "illust":"荒境TS",
 "voice":"",
 "buildTime":0,
+"skins":["1일 계약"],
 "Fx":{
 "target":"hg",
 "self":5,

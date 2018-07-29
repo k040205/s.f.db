@@ -8,7 +8,7 @@ $(".x").click(()=>{$(this).parent().addClass(TogV)});
 $("#close,#open").click(()=>{$("#Sidebar").toggleClass(TogV)});
 $("#lo,#lc").click(()=>{$("#lm").toggleClass(TogV)});
 $("#ro,#rc").click(()=>{$("#rm").toggleClass(TogV)});
-$("#lm>button").click(function(){var sel=$(this).index();sel==1||sel==2?($("#rm").removeClass(TogV),$("#lm").addClass(TogV)):$("#lm").addClass(TogV);});
+$("#lm>button").click(function(){var sel=$(this).index();sel==1||sel==2?($("#rm").removeClass(TogV),$("#lm").addClass(TogV)):$("#lm").addClass(TogV)});
 $("#rm>button").click(function(){$("#rm").addClass(TogV);});
 $(".tab").click(function(){
 var tis=$(this),Classes=(tis.attr("class")).split(" "),T=["#tab1","#tab2","#tab3","#tab4","#tab5","#tab6","#tab7","#tab8","#tab9","#tab10"];
@@ -16,19 +16,18 @@ $("#Sidebar>button:nth-child(5),#lm>button:nth-child(4),.tab").removeClass("bg-d
 $("#result").empty();
 tis.addClass("bg-danger");
 for (var a=0,len=Classes.length;a<len;a++){
-switch (Classes[a]){
-case "m1":hidden(0);break
-case "m2":hidden(1);break
-case "m3":hidden(2);break
-case "m4":hidden(3);break
-case "m5":hidden(4);break
-case "m6":hidden(5);break
-case "m7":hidden(6);break
-case "m8":hidden(7);break
-case "m9":hidden(8);break
-case "m10":hidden(9);break
-}
-function hidden(x){$(T[x]).removeClass("d-none").parent().find(".content").not(T[x]).addClass("d-none")}
+var sel=Classes[a];
+"m1"==sel?hide(0):
+"m2"==sel?hide(1):
+"m3"==sel?hide(2):
+"m4"==sel?hide(3):
+"m5"==sel?hide(4):
+"m6"==sel?hide(5):
+"m7"==sel?hide(6):
+"m8"==sel?hide(7):
+"m9"==sel?hide(8):
+"m10"==sel&&hide(9);
+function hide(x){$(T[x]).removeClass("d-none").parent().find(".content").not(T[x]).addClass("d-none")}
 }
 });
 $("#Sidebar>button:not(#close),#lm>button:not(#lc)").click(function(){
@@ -36,8 +35,8 @@ $("#Sidebar>button:not(#close),#lm>button:not(#lc)").click(function(){
 	tis.addClass("bg-danger").parent().find("button").not(tis).removeClass("bg-danger");
 	sel=="Database"?db.removeClass("d-none").parent().find(sm).addClass("d-none"):
 	sel=="Simulator"?sm.removeClass("d-none").parent().find(db).addClass("d-none"):
-	sel=="Information"&&($("#contents>div").addClass("d-none"),$("#index").removeClass("d-none"),$(".tab").removeClass("bg-danger"),$("#result").empty());
-});
+	sel=="Information"&&($("#contents>div").addClass("d-none"),$("#index").removeClass("d-none"),$(".tab").removeClass("bg-danger"),$("#result").empty())
+})
 });
 // disc
 var dollAccExp=[0,0,1,3,6,10,15,21,28,36,45,55,66,78,91,105,120,136,153,171,190,210,231,253,276,300,325,351,379,410,444,486,532,582,636,694,757,824,896,973,1055,1143,1236,1335,1440,1551,1669,1794,1925,2064,2210,2364,2525,2694,2871,3057,3252,3456,3669,3892,4125,4368,4621,4884,5158,5443,5739,6047,6367,6699,7043,7494,7962,8448,8952,9474,10014,10573,11152,11750,12368,13007,13667,14348,15051,15777,16525,17296,18091,18910,19753,20879,22040,23235,24466,25733,27037,28378,29757,31175,32632,33632,34832,36232,37832,39632,41632,43832,46232,49032,52632,57432,63832,72832,84832,100832,122832,152832,192832,242832,302832];
